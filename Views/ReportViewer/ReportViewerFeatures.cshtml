@@ -1,0 +1,23 @@
+﻿@using Syncfusion.MVC.EJ
+@using Syncfusion.JavaScript
+@{
+    ViewBag.Title = "ReportViewer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>ReportViewer Features:</h2>
+<br/>
+<li> Default</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<style type="text/css">
+    #reportviewer {
+        width: 950px !important;
+        height: 600px !important;
+    }
+</style>
+<div id = "ControlRegion">
+<div>
+   @(Html.EJ().ReportViewer("reportviewer").ProcessingMode(Syncfusion.JavaScript.ReportViewerEnums.ProcessingMode.Local).ReportPath("~/App_Data/GroupingAggregate.rdlc").ReportServiceUrl("/api/ReportAPI").DataSources(t => t.Name("Sales").Value(ViewData["Sales"]).Add()))
+</div>
+@(Html.EJ().ScriptManager())
+</div>

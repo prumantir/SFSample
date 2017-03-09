@@ -1,0 +1,126 @@
+﻿@using SFSample
+@{
+    ViewBag.Title = "Button";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Selected Button Types:</h2>
+<br/>
+<li> Default Button</li>
+<li> Toggle Button</li>
+<li> Split Button</li>
+<li> Repeate Button</li>
+<li> Check Box</li>
+<li> Radio Button</li>
+<li> Group Button</li>
+<li> RTL</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+<div>
+   <h3>Button:</h3><br />
+   <div>
+        @Html.EJ().Button("button41").Text("Login").EnableRTL(false).ShowRoundedCorner(true).Size(ButtonSize.Medium)
+   </div>
+</div>
+<div>
+   <h3>Toggle Button:</h3><br />
+   <div>
+       @Html.EJ().ToggleButton("check41").Size(ButtonSize.Medium).EnableRTL(true).ShowRoundedCorner(true).DefaultText("Play").ActiveText("Next")
+   </div>
+</div>
+<div>
+   <h3>Split Button:</h3><br />
+   <div>
+         @Html.EJ().SplitButton("spltbutton41").Text("Login").EnableRTL(false).ShowRoundedCorner(true).Size(ButtonSize.Medium).TargetID("Ul41")
+                        <ul id="Ul41">
+                            <li><span>User</span></li>
+                            <li><span>Guest</span></li>
+                            <li><span>Admin</span></li>
+                        </ul>
+</div>
+</div>
+<div>
+   <h3>Repeate Button:</h3><br />
+   <div>
+       @Html.EJ().Button("buttonnormal").Text("Click").EnableRTL(false).Size(ButtonSize.Large).ShowRoundedCorner(true).RepeatButton(true).ClientSideEvents(e => e.Click("btnClick"))
+   </div>
+</div>
+<script type="text/javascript">
+        function btnClick(e, ui) {
+            alert('This is Repeate Button')
+        }
+</script>
+<div>
+   <h3>CheckBox:</h3><br />
+   <div>
+      @Html.EJ().CheckBox("check1").EnableRTL(false).CssClass("nodetext")        
+      <label for="check1">Sample</label>
+   </div>
+</div> 
+<div>
+<br />
+<h3>Radio Button:</h3>
+<br />
+<table>
+                    <tr>
+                        <td style="width: 150px;">
+                             @Html.EJ().RadioButton("Radio2").Name("medium").EnableRTL(true).Size(RadioButtonSize.Medium).Checked(true).Enabled(true)
+                            <label for="Radio2" style=" margin-left: 10px;">
+                                1+ years</label>
+                        </td>
+                        <td style="width: 150px;">
+                             @Html.EJ().RadioButton("Radio4").Name("medium").Size(RadioButtonSize.Medium).Checked(false).Enabled(true)
+                            <label for="Radio4" style=" margin-left: 10px;">
+                                2.5+years</label>
+                        </td>
+                        <td style="width: 150px;">
+                            @Html.EJ().RadioButton("Radio5").Name("medium").Size(RadioButtonSize.Medium).Checked(false).Enabled(true)
+                            <label for="Radio5" style=" margin-left: 10px;">
+                                5+years</label>
+                        </td>
+                    </tr>
+                </table>
+</div>
+<div>
+   <h3>Group Button:</h3>
+<br />
+   <table>
+                <tr>
+                    <td class="btnsht">
+                        @Html.EJ().GroupButton("GroupButton").Width("230px").GroupButtonMode(GroupButtonMode.RadioButton).ShowRoundedCorner(true).Items(item =>
+                   {
+                       item.Add().Text("Day");
+                       item.Add().Text("Week");
+                       item.Add().Text("Month");
+                   })
+                    </td>
+                </tr>
+            </table>
+</div>
+            <div>
+   <h3>RTL:</h3><br />
+    <div class="frame">
+        <div class="control">
+            <table>
+                <tr>
+                    <td class="btnsht">@Html.EJ().ToggleButton("TextOnly").ShowRoundedCorner(true).Size(ButtonSize.Large).ContentType(ContentType.TextAndImage).DefaultText("Play").ActiveText("Next").DefaultPrefixIcon("e-icon e-mediaplay").ActivePrefixIcon("e-icon e-medianext").EnableRTL(true)
+                    </td>
+                    <td class="btnsht brtl">Toggle Button
+                    </td>
+                </tr>
+                <tr>
+                    <td class="btnsht">@Html.EJ().SplitButton("splitbuttonnormal").Text("Login").ShowRoundedCorner(true).Size(ButtonSize.Large).ContentType(ContentType.TextAndImage).ImagePosition(ImagePosition.ImageLeft).PrefixIcon("e-login:before").TargetID("adminmenu").EnableRTL(true)
+                    </td>
+                    <td class="splttd btnsht brtl">Split Button
+                        <ul id="adminmenu">
+                            <li><span>User</span></li>
+                            <li><span>Guest</span></li>
+                            <li><span>Admin</span></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+        </div>
+</div>

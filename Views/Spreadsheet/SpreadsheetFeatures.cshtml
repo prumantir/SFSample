@@ -1,0 +1,57 @@
+﻿@using SFSample.Spread
+@using System.Collections
+@{
+    ViewBag.Title = "Spreadsheet";
+    ViewData["ProductName"]="Spreadsheet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Spreadsheet Features:</h2><br />
+<li> Default</li>
+<li> Theme - Flat-Saffron</li>
+<br />
+<script src="../../Scripts/jquery.validate.min.js"></script>
+<script src="../../Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="../../Scripts/ej/ej.globalize.min.js"></script> 
+<div id = "ControlRegion">
+<div class="control">
+    @(Html.EJ().Spreadsheet<object>("Spreadsheet")
+    .SheetCount(2)
+    .ActiveSheetIndex(1)
+    .ShowRibbon(true)
+    .AllowSorting(true)
+    .AllowFiltering()
+    .AllowCellFormatting()
+    .AllowClipboard()
+    .ScrollSettings(scroll =>
+    {
+        scroll.Width(1000).Height(650).ScrollMode(SpreadsheetScrollMode.Infinite);
+    })
+    .Sheets(sheets =>
+    {
+        sheets.RowCount(60).ColCount(70).RangeSettings(rangesetting =>
+        {
+            rangesetting.Datasource((IEnumerable)ViewBag.DataSource).ShowHeader(true).StartCell("A1").Add();
+        }).Add();
+    })
+    .ImportSettings(import =>
+    {
+        import.ImportMapper("Import");
+    })
+    .ExportSettings(export =>
+    {
+        export.ExcelUrl("ExcelExport");
+        export.CsvUrl("CsvExport");
+        export.PdfUrl("PdfExport");
+    })
+    .ClientSideEvents(events => events.LoadComplete("loadComplete"))
+    )
+</div>
+<div class="clear-fix"></div>
+<script type ="text/javascript">
+    function loadComplete(args) {
+        var xlObj = this;
+        xlObj.setWidthToColumns([111, 128, 145, 192, 159, 218]);
+        xlObj.XLFormat.format({ "style": { "font-weight": "bold", "vertical-align": "middle", "text-align": "center" } }, "A1:F1");
+    }
+</script>
+</div>

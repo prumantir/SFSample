@@ -1,0 +1,54 @@
+﻿@using Syncfusion.JavaScript.Models; 
+@{
+    ViewBag.Title = "Kanban";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Kanban Features:</h2>
+<br/>
+<li> RTL</li>
+<li> Swim lane Grouping</li>
+<li> Selection - Single</li>
+<li> Editing - Dialog Editing</li>
+<li> Localization - English</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+    @(Html.EJ().Kanban("Kanban")
+                   .DataSource((IEnumerable<object>)ViewBag.datasource)
+		   .EnableRTL(true)
+                   .Columns(col =>
+                   {
+                       col.HeaderText("Backlog").Key("Open").Add();
+                       col.HeaderText("In Progress").Key("InProgress").Add();
+                       col.HeaderText("Done").Key("Close").Add();
+                   })
+                  .AllowTitle(true)
+		   .SelectionType(SelectionType.Single)
+                  .AllowSelection(true) 
+			      .EditSettings(edit =>
+                          {
+                              edit.AllowAdding(true)
+                                  .AllowEditing(true)
+                                  .EditItems(e =>
+                                  {
+                                      e.Field("Id").ValidationRules(rule => { rule.AddRule("required", true).AddRule("number", true); }).Add();
+                                      e.Field("Status").EditType(KanbanEditingType.Dropdown).Add();
+                                      e.Field("Assignee").EditType(KanbanEditingType.Dropdown).Add();
+                                      e.Field("Estimate").EditType(KanbanEditingType.Numeric).NumericEditOptions(new EditorProperties() { DecimalPlaces = 2 }).ValidationRules(rule => { rule.AddRule("range", "[0,1000]"); }).Add();
+                                      e.Field("Summary").EditType(KanbanEditingType.TextArea).ValidationRules(rule => { rule.AddRule("required", true); }).Add();
+                                  }).EditMode(KanbanEditMode.Dialog);
+                          })
+                  .KeyField("Status")
+		  .Locale("en-US")
+                  .Fields(field =>
+                  {
+                      field.Color("Type")
+                           .Content("Summary")
+                           .ImageUrl("ImgUrl")
+                           .Tag("Tags")
+                           .Priority("RankId") 
+			   .SwimlaneKey("Assignee")                     
+                           .PrimaryKey("Id");
+                  })
+)
+</div>

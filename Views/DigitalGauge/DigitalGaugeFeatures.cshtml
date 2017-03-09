@@ -1,0 +1,156 @@
+﻿@{
+    ViewBag.Title = "DigitalGauge";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using SFSample.Controllers
+<h2>DigitalGauge Features:</h2>
+<br/>
+<li> Character Type</li>
+<li> Export Image</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<br/>
+<script src="@Url.Content("~/Scripts/excanvas.min.js")"></script>
+<div id = "ControlRegion">
+<table style="height:19px;" >
+<tr>
+<td>
+    @(Html.EJ().DigitalGauge("digitalGauge").Width(600).Height(455).Items(
+                items =>
+                {
+                    items.Position(
+                loc =>
+                {
+                    loc.X(32).Y(32);
+                })
+                .SegmentSettings(se => se.Spacing(0)
+                .Width(2))
+                .Value("123456789").Add();
+                }))
+    </td>
+        </tr>
+    </table>
+<table>
+    <tr>         <td>
+         Segment Spacing  </td>
+       <td>     @(Html.EJ().Slider("segmantSpacing").SliderType(SlideType.MinRange).Value("-1").Height("10").Width("110").MinValue(-2).MaxValue(1).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange").Slide("onchange");}))
+       </td>
+        </tr>
+     <tr>
+          <td style="height:19px; width:10px;">   Segment Width
+              </td> 
+       <td>      @(Html.EJ().Slider("segmantWidth").SliderType(SlideType.MinRange).Value("2").Height("10").Width("110").MinValue(1).MaxValue(3).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange").Slide("onchange");}))
+           </td> 
+               </tr>
+    <tr>
+        <td> 
+            CharacterSpacing
+        </td> 
+        <td> 
+            @(Html.EJ().Slider("charSpacing").SliderType(SlideType.MinRange).Value("2").Height("10").Width("110").MinValue(1).MaxValue(4).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange").Slide("onchange");}))
+        </td>
+        </tr>
+        <tr> 
+        <td> 
+            Character Type
+        </td> 
+        <td> 
+           @(Html.EJ().DropDownList("charactertype").Datasource((IEnumerable<Types>)ViewBag.datasource1).DropDownListFields(df => df.ID("Type").Text("Type").Value("Type")).SelectedItemIndex(0).ClientSideEvents(cli => { cli.Select("onchange"); }))
+                      </td> 
+        </tr>
+        <tr>
+  <td> 
+            <input type="text" class="ejinputtext" id="labeltext" value="123456789" style="width: 106px" />
+      </td> 
+        <td> 
+            <input type="submit" id="Refresh" value="Refresh" style="display: none" />
+        </td> 
+@*</div>*@
+        </tr>
+    </canvas>
+    </table>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$("#sampleProperties").ejPropertiesPanel();
+    });
+    var textBox = $("#labeltext");
+    $(textBox).bind("keyup", function () {
+        var val = $("#labeltext").val();
+        digitarget = $("#digitalGauge").data("ejDigitalGauge");
+        digitarget.setValue(0, val);
+    });
+    function onchange(args) {
+        digitaltarget = $("#digitalGauge").data("ejDigitalGauge");
+        charSpacing = $("#charSpacing").data("ejSlider");
+        if (args.id == "segmantSpacing") {
+            digitaltarget.model.items[0].segmentSettings.spacing = args.value;
+        }
+        else if (args.id == "segmantWidth") {
+            digitaltarget.model.items[0].segmentSettings.width = args.value;
+        }
+        else if (args.id == "charSpacing") {
+            digitaltarget.model.items[0].characterSettings.spacing = args.value;
+        }
+        if (args.text == "sevensegment" || args.text == "fourteensegment" || args.text == "sixteensegment") {
+            digitaltarget.model.items[0].segmentSettings.length = 8;
+            digitaltarget.model.items[0].characterSettings.spacing = 10;
+            digitaltarget.model.items[0].characterSettings.type = args.text;
+            charSpacing.model.minValue = 7;
+            charSpacing.model.maxValue = 12;
+            charSpacing.setModel({ value: digitaltarget.model.items[0].characterSettings.spacing });
+        }
+        else if (args.text == "eightcrosseightdotmatrix" || args.text == "eightcrosseightsquarematrix") {
+            digitaltarget.model.items[0].segmentSettings.length = 2;
+            digitaltarget.model.items[0].characterSettings.spacing = 2;
+            digitaltarget.model.items[0].characterSettings.type = args.text;
+            charSpacing.model.minValue = 1;
+            charSpacing.model.maxValue = 4;
+            charSpacing.setModel({ value: digitaltarget.model.items[0].characterSettings.spacing });
+        }
+        digitaltarget._setModel(digitaltarget.model.items);
+    }
+    </script>
+     <div class="row">
+                        <div class="col-md-3">
+                            File Name
+                        </div>
+                        <div class="col-md-3 aligntop">
+                            <input type="text" id="txtFileName" class="ejinputtext" style="width:100px"/>
+                        </div>
+                        <div class="col-md-3">
+                            File Type
+                        </div>
+                        <div class="col-md-3 aligntop">
+                            @(Html.EJ().DropDownList("ddlFileType").Datasource((IEnumerable<FileFormat>)ViewBag.datasource).DropDownListFields(df => df.ID("fileType").Text("fileType").Value("fileType")).SelectedItemIndex(0))
+                        </div>
+                    </div>
+<style>
+        .col-md-3 .e-ddl .e-input {
+            line-height:20px;
+        }
+    </style>
+  <br />
+<div class="row">
+                        <div class="col-md-3">
+                             @(Html.EJ().Button("btnExportImage").Text("Export").ClientSideEvents(events => { events.Click("buttonclickevent"); }))
+                        </div>
+                        </div>
+<style>
+        .col-md-3 .e-ddl .e-input {
+            line-height:20px;
+        }
+    </style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$("#sampleProperties").ejPropertiesPanel();
+    });
+    $(function () {
+        $("#btnExportImage").ejButton({ width: "100px", click: "buttonclickevent", });
+    });
+    function buttonclickevent() {
+        var FileName = $("#txtFileName").val();
+        var FileFormat = $("#ddlFileType").val();
+        $("#digitalGauge").ejDigitalGauge("exportImage", FileName, FileFormat);
+    }
+    </script>
+</div>

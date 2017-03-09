@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "DateTimePicker";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>DateTime Picker Features:</h2>
+<br/>
+<li> RTL</li>
+<li> Localization - en-US</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+<div class="frame">
+        <div class="control">
+             @Html.EJ().DateTimePicker("DateTime").Value("04/15/2014 2:47 AM").EnableRTL(true).Locale("en-US")
+        </div>
+    </div>
+<style>
+        .control {
+            margin: 0 auto;
+            width: 210px;
+        }
+        .control .e-datetime-wrap {
+            width: 175px;
+        }
+    </style>
+</div>

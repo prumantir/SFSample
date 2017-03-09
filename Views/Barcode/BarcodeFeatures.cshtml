@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Barcode";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Barcode Features:</h2>
+<br/>
+<li> Barcode Samples - QR Barcode</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+ <div>
+        <div>
+             @Html.EJ().Barcode("barcode").Text("HTTP://WWW.SYNCFUSION.COM").XDimension(8)
+        </div>
+ </div>
+</div>

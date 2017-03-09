@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Signature";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Signature Features:</h2>
+<br/>
+<li> Default</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+    <div class="frame">
+             @Html.EJ().Signature("sign").Height("400px").StrokeWidth(3).IsResponsive(true)      
+    </div>
+    <style>
+        .frame {
+            width: 80%;
+        }        
+    </style>
+</div>

@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Gantt";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Gantt Features:</h2>
+<br/>
+<li> BaseLines</li>
+<li> Column Resize</li>
+<li> Include Weekend</li>
+<li> Task Names</li>
+<li> Progress Status</li>
+<li> Taskbar Tooltip</li>
+<li> Resource</li>
+<li> Sorting</li>
+<li> Virtualization</li>
+<li> Localization - en-US</li>
+<li> Context Menu</li>
+<li> AltRow</li>
+<li> GridCellTooltip</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+    @(Html.EJ().Gantt("ganttsample2")
+              .TaskIdMapping("Id")
+              .TaskNameMapping("Name")
+              .TreeColumnIndex(1)
+              .StartDateMapping("StartDate")
+              .DurationMapping("Duration")
+              .ProgressMapping("PercentDone")
+              .ScheduleStartDate("02/23/2014")
+              .ScheduleEndDate("03/09/2014")
+               .DateFormat("MM/dd/yyyy")
+              .HighlightWeekends(true)
+              .IncludeWeekend(true)
+              .AllowColumnResize(true)
+               .EnableAltRow(false)
+              .ChildMapping("Children")
+              .AllowSelection(true)
+              .BaselineStartDateMapping("BaselineStartDate")
+              .BaselineEndDateMapping("BaselineEndDate")
+              .RenderBaseline(true)
+              .AllowSorting(true)
+               .ShowProgressStatus(true)
+                .EnableContextMenu(true)
+               .EnableTaskbarTooltip(true)
+              .AllowGanttChartEditing(false)
+               .ToolbarSettings (toolbar => 
+                              {
+                                  toolbar.ShowToolbar();
+                                  toolbar.ToolbarItems(new List<GanttToolBarItems>()
+                                  {
+                                      GanttToolBarItems.Add,
+                                      GanttToolBarItems.Edit,
+                                      GanttToolBarItems.Delete,
+                                      GanttToolBarItems.Update,
+                                      GanttToolBarItems.Cancel,
+                                      GanttToolBarItems.Indent,
+                                      GanttToolBarItems.Outdent,
+                                      GanttToolBarItems.ExpandAll,
+                                      GanttToolBarItems.CollapseAll,
+                                      GanttToolBarItems.Search,
+                                  });
+                              })
+                              .EditSettings(edit =>
+                              {
+                                  edit.AllowEditing(true);
+                                  edit.AllowAdding(true);
+                                  edit.AllowDeleting(true);
+                                  edit.EditMode("cellEditing");
+                              })
+			   .EnableVirtualization(true)
+               .ShowGridCellTooltip(true)
+              .PredecessorMapping("Predecessor")
+              .ResourceInfoMapping("Resources")
+              .ResourceNameMapping("ResourceName")
+              .ResourceIdMapping("ResourceId")
+              .Resources(ViewBag.resources)  
+              .Datasource(ViewBag.datasource)
+              )
+</div>

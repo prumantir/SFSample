@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "WaitingPopup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>WaitingPopup:</h2>
+<br/>
+<li> Default</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+<div id="target">
+   @Html.EJ().WaitingPopup("target").ShowOnInit(true)
+ </div>
+<style type="text/css" class="cssStyles">
+        #target {
+            height: 320px;
+            width: 600px;
+            margin: 0 auto;
+        }
+        #target_WaitingPopup
+        {
+            z-index:5 !important;
+        }
+        #target_WaitingPopup .e-image {
+            display: block;
+            height: 70px;
+        }
+ </style>
+</div>

@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "TextBoxes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Text Boxes:</h2>
+<br/>
+<div id = "ControlRegion">
+<div class="frame">
+        <div class="control">
+            <table class="editors">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label>
+                                Numeric TextBox</label>
+                        </td>
+                        <td>
+                            @Html.EJ().NumericTextbox("numeric").Value("1000")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                Percentage TextBox</label>
+                        </td>
+                        <td>
+                            @Html.EJ().PercentageTextbox("percent").Value("100")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                Currency Textbox</label>
+                        </td>
+                        <td>
+                            @Html.EJ().CurrencyTextbox("currency").Value("50")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                MaskEdit TextBox</label>
+                        </td>
+                        <td>
+                            @Html.EJ().MaskEdit("maskedit").MaskFormat("99-999-99999").InputMode(InputMode.Text)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

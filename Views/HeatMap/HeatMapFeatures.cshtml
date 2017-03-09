@@ -1,0 +1,18 @@
+﻿@using SFSample
+@{
+    ViewBag.Title = "HeatMap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Selected HeatMap Types:</h2>
+<br/>
+<li> HeatMap Samples - Table Mapping</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+<div>
+    @Html.EJ().HeatMap("heatmap", ViewData["heatmapModel"] as Syncfusion.JavaScript.DataVisualization.Models.HeatMapProperties)
+</div>
+<div>
+    @Html.EJ().HeatMapLegend("heatmapLegend", ViewData["heatmapLegendModel"] as Syncfusion.JavaScript.DataVisualization.Models.HeatMapLegendProperties)
+</div>
+</div>

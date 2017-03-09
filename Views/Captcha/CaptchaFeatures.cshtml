@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Captcha";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Captcha Features:</h2>
+<br/>
+<li> Default</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion" style="height:100px">
+       <div class="frame ">
+         <div class="control">
+            @Html.EJ().Captcha("myCaptcha").EnableRefreshImage(true).EnableAudio(true).RequestMapper("Refresh")
+         </div>
+       </div>    
+       <style>
+         .frame .control {
+            margin-left: 100px;
+         }
+       </style>
+</div>

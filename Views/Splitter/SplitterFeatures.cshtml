@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "Splitter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Splitter Features:</h2>
+<br/>
+<li> Vertical Orientation</li>
+<li> Nested Splitter</li>
+<li> RTL</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+@Html.EJ().Splitter("outterSplitter").PaneProperties(
+    p =>
+    {
+        p.Add().ContentTemplate(
+            @<div>
+                <div class="content" style="padding: 0px 15px;">
+                    <h3 class="h3">
+                        ASP.NET MVC
+                    </h3>
+                </div>
+            </div>).PaneSize("60");
+        p.Add().ContentTemplate(
+            @<div style="height: 100%; width: 99%">
+                   <h3 class="h3">ASP.NET MVC Classic</h3>
+                    @innerSplitter()
+                    </div>);
+    }).Height("350").Width("100%").Orientation(Orientation.Vertical).EnableRTL(true)
+ @helper innerSplitter()
+        {
+            @Html.EJ().Splitter("innerSplitter").EnableRTL(true).PaneProperties(p1 =>
+                {
+                   p1.Add().ContentTemplate(@<div>
+                       <div class="content">
+                           <h3 class="h3">
+                               Tools
+                           </h3>
+                           Essential Tools is an collection of user interface components used to create interactive
+                           ASP.NET MVC applications.
+                       </div>
+                   </div>);
+                   p1.Add().ContentTemplate(@<div>
+                       <div class="content">
+                           <h3 class="h3">
+                               Chart
+                           </h3>
+                           Essential Chart is a business-oriented charting component.
+                       </div>
+                   </div>).PaneSize("200");
+                   p1.Add().ContentTemplate(@<div>
+                       <div class="content">
+                           <h3 class="h3">
+                               Grid
+                           </h3>
+                           Essential Mvc Grid offers full featured a Grid control with extensive support for
+                           Grouping and the display of hierarchical data.
+                       </div>
+                   </div>).PaneSize("170");
+            })  
+        }
+<style type="text/css" class="cssStyles">
+        .cont
+        {
+            padding: 10px 0 0 10px;
+            text-align: center;
+        }
+        #inner
+        {
+            border:0 none;
+        }
+        #outterSpliter
+        {
+            margin: 0 auto;
+        }
+        .splitdiv
+        {
+            height:100%;width:100%;
+        }
+    </style>
+</div>

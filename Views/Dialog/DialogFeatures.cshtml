@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Dialog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Dialog Features:</h2>
+<br/>
+<li> Dialog Samples - Default</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+            @Html.EJ().Button("btnOpen").Text("Click to open dialog").ClientSideEvents(evt => evt.Click("onclick"))
+<div class="control">
+        @{Html.EJ().Dialog("basicDialog").Title("Audi-Q3 Drive").ContentTemplate(@<div style="margin: 5px 14px">
+                           <h1>Audi Q3</h1>
+                           <div class="audi-q3">
+                               <br />                               
+                               <img src="@Url.Content("~/Content/Images/Dialog/audiq3-1.png")" /><br />
+                               <img src="@Url.Content("~/Content/Images/Dialog/audiq3-2.png")" />
+                           </div>
+                           <div>
+                               It is a concept vehicle with Liquid Silver body colour, 20-inch wheels, fabric folding roof, electrically-controlled hood, 4-cylinder 2.0 TDI engine rated 204 PS (150 kW; 201 hp) 
+                                and 400 N·m (295.02 lbf·ft), diesel particulate filter and Bluetec emission control system, quattro permanent four-wheel drive system with Haldex clutch, 
+                                Audi S tronic dual-clutch gearbox, McPherson-strut front axle and a four-link rear axle, Audi drive select system with 3 modes (dynamic, sport, efficiency), 
+                                MMI control panel with touch pad and dual-view technology, sound system with the prominent extending tweeters.
+                           </div>
+                       </div>).Width(550).Content(".control").ClientSideEvents(evt => evt.Close("onDialogClose")).Render();}
+</div>
+<script>
+        $("#btnOpen").hide();
+        function onclick() {
+            $("#basicDialog").ejDialog("open");
+            $("#btnOpen").hide();
+        }
+        function onDialogClose(args) {
+            $("#btnOpen").show();
+        }
+    </script>
+<style class="cssStyles">
+        .audi-q3 {
+            float: right;
+            margin: -17px 5px 5px;
+        }
+        .control {
+            height: 500px;
+        }
+    </style>
+</div>

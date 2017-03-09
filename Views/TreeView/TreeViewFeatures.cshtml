@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "TreeView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>TreeView Features:</h2>
+<br/>
+<li> CheckBox</li>
+<li> Node Editing</li>
+<li> Drag and Drop</li>
+<li> Context Menu</li>
+<li> State Maintenance</li>
+<li> RTL</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+<div style="width: 250px">
+         @Html.EJ().TreeView("tree").Items(items =>
+                {
+                    items.Add().Text("File").Children(child =>
+                    {
+                        child.Add().Text("New");
+                        child.Add().Text("Open");
+                        child.Add().Text("Save");
+                        child.Add().Text("Save As");
+                        child.Add().Text("Print Preview");
+                        child.Add().Text("Print");
+                        child.Add().Text("Close");
+                    });
+                    items.Add().Text("Edit").Children(child =>
+                    {
+                        child.Add().Text("Undo");
+                        child.Add().Text("Redo");
+                        child.Add().Text("Cut");
+                        child.Add().Text("Copy");
+                        child.Add().Text("Paste");
+                    });
+                    items.Add().Text("Insert").Children(child =>
+                    {
+                        child.Add().Text("Page Numbers");
+                        child.Add().Text("Table");
+                        child.Add().Text("Picture");
+                        child.Add().Text("Comment");
+                        child.Add().Text("Links");
+                        child.Add().Text("Symbols");
+                        child.Add().Text("Diagram");
+                        child.Add().Text("TextBox");
+                        child.Add().Text("Data Time");
+                    });
+                    items.Add().Text("Format").Children(child =>
+                    {
+                        child.Add().Text("Font").Children(childs =>
+                        {
+                            childs.Add().Text("Arial");
+                            childs.Add().Text("Arial Black");
+                            childs.Add().Text("Arial Narrow");
+                            childs.Add().Text("Courier");
+                            childs.Add().Text("Gaurand");
+                            childs.Add().Text("Times New Roman");
+                            childs.Add().Text("Vrendra");
+                            childs.Add().Text("Helvatica");
+                            childs.Add().Text("Impact");
+                        });
+                        child.Add().Text("Paragraph");
+                        child.Add().Text("Bullets and Numbering");
+                        child.Add().Text("Borders and Shading");
+                        child.Add().Text("Columns");
+                        child.Add().Text("Tabs");
+                        child.Add().Text("Change Case");
+                    });
+                    items.Add().Text("View").Children(child =>
+                    {
+                        child.Add().Text("Normal");
+                        child.Add().Text("Web Layout");
+                        child.Add().Text("Print Layout");
+                        child.Add().Text("Task Pane");
+                    });
+                    items.Add().Text("Tools").Children(child =>
+                    {
+                        child.Add().Text("Spelling and Grammar");
+                        child.Add().Text("Research");
+                        child.Add().Text("Language");
+                        child.Add().Text("Word Count");
+                        child.Add().Text("Track Changes");
+                        child.Add().Text("Merge Documents");
+                    });
+                }).ShowCheckbox(true).AllowEditing(true).AllowDragAndDrop(true).AllowDropChild(true).AllowDropSibling(true).AllowDragAndDropAcrossControl(true).EnablePersistence(true).EnableRTL(true)
+    </div>
+             @Html.EJ().Menu("treeviewMenu").Items(items=>{
+                                          items.Add().Text("Add New Item");
+                                          items.Add().Text("Remove Item");
+                                          items.Add().Text("Disable Item");
+                                          items.Add().Text("Enable Item");
+                                      }).OpenOnClick(false).MenuType(MenuType.ContextMenu).ShowSubLevelArrows(true).ContextMenuTarget("#tree").ClientSideEvents(s => s.Click("menuclick").BeforeOpen("beforeOpen"))
+   <script type="text/javascript">
+        var tabIndex = 1, treeviewObj, contextMenuObj, childMenu, selectedNode;
+        function beforeOpen(args) {
+            var treeviewObj = $("#tree").data("ejTreeView");
+            contextMenuObj = $("#treeviewMenu").data("ejMenu");
+            childMenu = contextMenuObj.element.children();
+            if ($(args.target).hasClass('e-node-disable')) {
+                $(childMenu).addClass('e-disable-item');
+                $(childMenu[3]).removeClass('e-disable-item');
+            }
+            else if ($(args.target).hasClass('e-text')) {
+                $(childMenu).removeClass('e-disable-item');
+                $(childMenu[3]).addClass('e-disable-item');
+            }
+            if (!$(args.target).hasClass("e-text"))
+                args.cancel = true;
+            else {
+                selectedNode = $(args.target).closest('.e-item');
+                if (!$(args.target).hasClass('e-node-disable'))
+                    treeviewObj.selectNode(selectedNode);
+            }
+        }
+        function menuclick(args) {
+            var treeviewObj = $("#tree").data("ejTreeView");
+            if (args.events.text == "Add New Item") {
+                treeviewObj.addNode("Item" + tabIndex, selectedNode);
+                tabIndex++;
+            }
+            else if (args.events.text == "Remove Item") {
+                treeviewObj.removeNode(selectedNode);
+            }
+            else if (args.events.text == "Disable Item") {
+                treeviewObj.disableNode(selectedNode)
+            }
+            else if (args.events.text == "Enable Item") {
+                treeviewObj.enableNode(selectedNode)
+            }
+        }
+    </script>
+</div>

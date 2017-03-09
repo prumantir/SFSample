@@ -1,0 +1,1954 @@
+﻿{
+
+            "root": {
+                "Employee": {
+                    "Id": "parent",
+                    "Name": "Eric Joplin",
+                    "ContactNo": "7899896099",
+                    "Designation": "Managing Director",
+                    "Doj": "1-March-2010",
+                    "EmailId": "joplin@xyz.com",
+                    "ImageUrl": "../images/orgchart/Clayton.png",
+                    "IsExpand": "true",
+                    "RatingColor": "#C34444",
+                    "Salary": "90000",
+                    "Employee.BitImag": [
+                {
+                    "UriSource": "{Binding ImageUrl}"
+                }
+                    ],
+                    "Employee": [
+                {
+                    "Id": 1,
+                    "Name": "Thomas Den",
+                    "ContactNo": "7899896099",
+                    "Designation": "Project Manager",
+                    "Doj": "12/April/2010",
+                    "EmailId": "joplin@xyz.com",
+                    "ImageUrl": "../images/orgchart/Thomas.PNG",
+                    "IsExpand": "false",
+                    "RatingColor": "#68C2DE",
+                    "Salary": "80000",
+                    "Employee.BitImag": [
+                    {
+                        "UriSource": "{Binding ImageUrl}"
+                    }
+                    ],
+                    "Employee": [
+                    {
+                        "Id": 2,
+                        "Name": "Robert",
+                        "ContactNo": "7899896099",
+                        "Designation": "Project Lead",
+                        "Doj": "23/may/2012",
+                        "EmailId": "joplin@xyz.com",
+                        "ImageUrl": "../images/orgchart/image2.png",
+                        "IsExpand": "false",
+                        "RatingColor": "#93B85A",
+                        "Salary": "70000",
+                        "Employee.BitImag": [
+                        {
+                            "UriSource": "{Binding ImageUrl}"
+                        }
+                        ],
+                        "Employee": [
+                        {
+                            "Id": 3,
+                            "Name": "Pedro Afonso",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "23/may/2012",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/image2.png",
+                            "IsExpand": "false",
+                            "RatingColor": "#93B85A",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ],
+                            "Employee": {
+                                "Id": 4,
+                                "Name": "Jaime Yorres",
+                                "ContactNo": "7899896099",
+                                "Designation": "S/w Engg",
+                                "Doj": "23/may/2012",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/image2.png",
+                                "IsExpand": "false",
+                                "RatingColor": "#93B85A",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ],
+                                "Employee": [
+                                {
+                                    "Id": 5,
+                                    "Name": "Carlos González",
+                                    "ContactNo": "7899896099",
+                                    "Designation": "Project Trainee",
+                                    "Doj": "23/may/2012",
+                                    "EmailId": "joplin@xyz.com",
+                                    "ImageUrl": "../images/orgchart/image2.png",
+                                    "IsExpand": "None",
+                                    "RatingColor": "#93B85A",
+                                    "Salary": "50000",
+                                    "Employee.BitImag": [
+                                    {
+                                        "UriSource": "{Binding ImageUrl}"
+                                    }
+                                    ]
+                                },
+                                {
+                                    "Id": 6,
+                                    "Name": "Felipe Izquierdo",
+                                    "ContactNo": "7899896099",
+                                    "Designation": "Project Trainee",
+                                    "Doj": "23/may/2012",
+                                    "EmailId": "joplin@xyz.com",
+                                    "ImageUrl": "../images/orgchart/image2.png",
+                                    "IsExpand": "None",
+                                    "RatingColor": "#93B85A",
+                                    "Salary": "5000",
+                                    "Employee.BitImag": [
+                                    {
+                                        "UriSource": "{Binding ImageUrl}"
+                                    }
+                                    ]
+                                }
+                                ]
+                            }
+                        },
+                        {
+                            "Id": 7,
+                            "Name": "Elizabeth Brown",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "23/may/2012",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/image2.png",
+                            "IsExpand": "false",
+                            "RatingColor": "#93B85A",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ],
+                            "Employee": {
+                                "Id": 8,
+                                "Name": "Fran Wilson",
+                                "ContactNo": "7899896099",
+                                "Designation": "S/w Engg",
+                                "Doj": "23/may/2012",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/image2.png",
+                                "IsExpand": "false",
+                                "RatingColor": "#93B85A",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ],
+                                "Employee": [
+                                {
+                                    "Id": 9,
+                                    "Name": "Giovanni Rovelli",
+                                    "ContactNo": "7899896099",
+                                    "Designation": "Project Trainee",
+                                    "Doj": "23/may/2012",
+                                    "EmailId": "joplin@xyz.com",
+                                    "ImageUrl": "../images/orgchart/image2.png",
+                                    "IsExpand": "None",
+                                    "RatingColor": "#93B85A",
+                                    "Salary": "40000",
+                                    "Employee.BitImag": [
+                                    {
+                                        "UriSource": "{Binding ImageUrl}"
+                                    }
+                                    ]
+                                },
+                                {
+                                    "Id": 10,
+                                    "Name": "Catherine Dewey",
+                                    "ContactNo": "7899896099",
+                                    "Designation": "Project Trainee",
+                                    "Doj": "23/may/2012",
+                                    "EmailId": "joplin@xyz.com",
+                                    "ImageUrl": "../images/orgchart/image2.png",
+                                    "IsExpand": "None",
+                                    "RatingColor": "#93B85A",
+                                    "Salary": "40000",
+                                    "Employee.BitImag": [
+                                    {
+                                        "UriSource": "{Binding ImageUrl}"
+                                    }
+                                    ]
+                                }
+                                ]
+                            }
+                        }
+                        ]
+                    },
+                    {
+                        "Id": 11,
+                        "Name": "Francisco Chang",
+                        "ContactNo": "7899896099",
+                        "Designation": "Project Lead",
+                        "Doj": "23/may/2012",
+                        "EmailId": "joplin@xyz.com",
+                        "ImageUrl": "../images/orgchart/image2.png",
+                        "IsExpand": "false",
+                        "RatingColor": "#93B85A",
+                        "Salary": "70000",
+                        "Employee.BitImag": [
+                        {
+                            "UriSource": "{Binding ImageUrl}"
+                        }
+                        ],
+                        "Employee": [
+                        {
+                            "Id": 12,
+                            "Name": "Sven Ottlieb",
+                            "ContactNo": "7899896099",
+                            "Designation": "CSR",
+                            "Doj": "23/may/2012",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/image2.png",
+                            "IsExpand": "None",
+                            "RatingColor": "#93B85A",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ]
+                        },
+                        {
+                            "Id": 13,
+                            "Name": "Janine Labrune",
+                            "ContactNo": "7899896099",
+                            "Designation": "CSR",
+                            "Doj": "23/may/2012",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/image2.png",
+                            "IsExpand": "None",
+                            "RatingColor": "#93B85A",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ]
+                        }
+                        ]
+                    }
+                    ]
+                },
+                {
+                    "Id": 14,
+                    "Name": "Paul Vent",
+                    "ContactNo": "7899896099",
+                    "Designation": "Project Manager",
+                    "Doj": "1/May/2010",
+                    "EmailId": "joplin@xyz.com",
+                    "ImageUrl": "../images/orgchart/Paul.png",
+                    "IsExpand": "true",
+                    "RatingColor": "#68C2DE",
+                    "Salary": "80000",
+                    "Employee.BitImag": [
+                    {
+                        "UriSource": "{Binding ImageUrl}"
+                    }
+                    ],
+                    "Employee": [
+                    {
+                        "Id": 15,
+                        "Name": "Maria Even",
+                        "ContactNo": "7899896099",
+                        "Designation": "Project Lead",
+                        "Doj": "27- Nov-2010",
+                        "EmailId": "joplin@xyz.com",
+                        "ImageUrl": "../images/orgchart/Maria.png",
+                        "IsExpand": "false",
+                        "RatingColor": "#93B85A",
+                        "Salary": "70000",
+                        "Employee.BitImag": [
+                        {
+                            "UriSource": "{Binding ImageUrl}"
+                        }
+                        ],
+                        "Employee": [
+                        {
+                            "Id": 16,
+                            "Name": "Amal",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "12-June-2011",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/images9.png",
+                            "IsExpand": "false",
+                            "RatingColor": "#93B85A",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ],
+                            "Employee": {
+                                "Id": 17,
+                                "Name": "Anabela Domingues",
+                                "ContactNo": "7899896099",
+                                "Designation": "Project Trainee",
+                                "Doj": "12-August-2011",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/image2.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#D46E89",
+                                "Salary": "60000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            }
+                        },
+                        {
+                            "Id": 18,
+                            "Name": "Kenny",
+                            "ContactNo": "7899896099",
+                            "Designation": "CSR",
+                            "Doj": "12-August-2011",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/image2.png",
+                            "IsExpand": "false",
+                            "RatingColor": "#68C2DE",
+                            "Salary": "70000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ],
+                            "Employee": {
+                                "Id": 19,
+                                "Name": "Helvetius Nagy",
+                                "ContactNo": "7899896099",
+                                "Designation": "CSR",
+                                "Doj": "12-August-2011",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/image2.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#68C2DE",
+                                "Salary": "60000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            }
+                        }
+                        ]
+                    },
+                    {
+                        "Id": 20,
+                        "Name": "Jenny",
+                        "ContactNo": "7899896099",
+                        "Designation": "Project Lead",
+                        "Doj": "12-feb-2010",
+                        "EmailId": "joplin@xyz.com",
+                        "ImageUrl": "../images/orgchart/Jenny.png",
+                        "IsExpand": "false",
+                        "RatingColor": "#93B85A",
+                        "Salary": "70000",
+                        "Employee.BitImag": [
+                        {
+                            "UriSource": "{Binding ImageUrl}"
+                        }
+                        ],
+                        "Employee": [
+                        {
+                            "Id": 21,
+                            "Name": "Jack",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "12-dec-2012",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/image55.png",
+                            "IsExpand": "false",
+                            "RatingColor": "#D46E89",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ],
+                            "Employee": {
+                                "Id": 22,
+                                "Name": "Palle Ibsen",
+                                "ContactNo": "7899896099",
+                                "Designation": "Project Trainee",
+                                "Doj": "12-dec-2012",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/image51.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#EBB92E",
+                                "Salary": "60000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            }
+                        },
+                        {
+                            "Id": 23,
+                            "Name": "Jersy",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "12-dec-2012",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/image51.png",
+                            "IsExpand": "false",
+                            "RatingColor": "#EBB92E",
+                            "Salary": "20000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ],
+                            "Employee": {
+                                "Id": 24,
+                                "Name": "Mary Saveley",
+                                "ContactNo": "7899896099",
+                                "Designation": "S/w Engg",
+                                "Doj": "12-dec-2012",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/image51.png",
+                                "IsExpand": "false",
+                                "RatingColor": "#EBB92E",
+                                "Salary": "20000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ],
+                                "Employee": [
+                                {
+                                    "Id": 25,
+                                    "Name": "Paul Henriot",
+                                    "ContactNo": "7899896099",
+                                    "Designation": "Project Trainee",
+                                    "Doj": "12-dec-2012",
+                                    "EmailId": "joplin@xyz.com",
+                                    "ImageUrl": "../images/orgchart/image51.png",
+                                    "IsExpand": "None",
+                                    "RatingColor": "#EBB92E",
+                                    "Salary": "20000",
+                                    "Employee.BitImag": [
+                                    {
+                                        "UriSource": "{Binding ImageUrl}"
+                                    }
+                                    ]
+                                },
+                                {
+                                    "Id": 26,
+                                    "Name": "Rita Müller",
+                                    "ContactNo": "7899896099",
+                                    "Designation": "Project Trainee",
+                                    "Doj": "12-dec-2012",
+                                    "EmailId": "joplin@xyz.com",
+                                    "ImageUrl": "../images/orgchart/image51.png",
+                                    "IsExpand": "None",
+                                    "RatingColor": "#EBB92E",
+                                    "Salary": "20000",
+                                    "Employee.BitImag": [
+                                    {
+                                        "UriSource": "{Binding ImageUrl}"
+                                    }
+                                    ]
+                                }
+                                ]
+                            }
+                        }
+                        ]
+                    }
+                    ]
+                },
+                {
+                    "Id": 27,
+                    "Name": "Rabin Rane",
+                    "ContactNo": "7899896099",
+                    "Designation": "Project Manager",
+                    "Doj": "15-Nov-2010",
+                    "EmailId": "joplin@xyz.com",
+                    "ImageUrl": "../images/orgchart/Robin.PNG",
+                    "IsExpand": "true",
+                    "RatingColor": "#68C2DE",
+                    "Salary": "80000",
+                    "Employee.BitImag": [
+                    {
+                        "UriSource": "{Binding ImageUrl}"
+                    }
+                    ],
+                    "Employee": [
+                    {
+                        "Id": 28,
+                        "Name": "Clayton",
+                        "ContactNo": "7899896099",
+                        "Designation": "Project Lead",
+                        "Doj": "12-May-2011",
+                        "EmailId": "joplin@xyz.com",
+                        "ImageUrl": "../images/orgchart/Clayton.png",
+                        "IsExpand": "true",
+                        "RatingColor": "#93B85A",
+                        "Salary": "70000",
+                        "Employee.BitImag": [
+                        {
+                            "UriSource": "{Binding ImageUrl}"
+                        }
+                        ],
+                        "Employee": [
+                        {
+                            "Id": 29,
+                            "Name": "Rai",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "23-March-2013",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/images7.png",
+                            "IsExpand": "None",
+                            "RatingColor": "#D46E89",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ]
+                        },
+                        {
+                            "Id": 30,
+                            "Name": "John",
+                            "ContactNo": "7899896099",
+                            "Designation": "Project Trainee",
+                            "Doj": "13-March-2013",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/John.png",
+                            "IsExpand": "None",
+                            "RatingColor": "#EBB92E",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ]
+                        }
+                        ]
+                    },
+                    {
+                        "Id": 31,
+                        "Name": "Lara",
+                        "ContactNo": "7899896099",
+                        "Designation": "Project Lead",
+                        "Doj": "18-dec-2010",
+                        "EmailId": "joplin@xyz.com",
+                        "ImageUrl": "../images/orgchart/image12.png",
+                        "IsExpand": "false",
+                        "RatingColor": "#68C2DE",
+                        "Salary": "70000",
+                        "Employee.BitImag": [
+                        {
+                            "UriSource": "{Binding ImageUrl}"
+                        }
+                        ],
+                        "Employee": [
+                        {
+                            "Id": 32,
+                            "Name": "Angel",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "25-Nov-2012",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/image56.png",
+                            "IsExpand": "false",
+                            "RatingColor": "#D46E89",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ],
+                            "Employee": [
+                            {
+                                "Id": 33,
+                                "Name": "Paula Parente",
+                                "ContactNo": "7899896099",
+                                "Designation": "Project Trainee",
+                                "Doj": "25-Nov-2012",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/image56.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#D46E89",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            },
+                            {
+                                "Id": 34,
+                                "Name": "Karl Jablonski",
+                                "ContactNo": "7899896099",
+                                "Designation": "S/w Engg",
+                                "Doj": "25-Nov-2012",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/image56.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#D46E89",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            }
+                            ]
+                        },
+                        {
+                            "Id": 35,
+                            "Name": "Pirkko Koskitalo",
+                            "ContactNo": "7899896099",
+                            "Designation": "SR",
+                            "Doj": "25-Nov-2012",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/image56.png",
+                            "IsExpand": "false",
+                            "RatingColor": "#D46E89",
+                            "Salary": "20000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ],
+                            "Employee": {
+                                "Id": 36,
+                                "Name": "Matti Karttunen",
+                                "ContactNo": "7899896099",
+                                "Designation": "SR",
+                                "Doj": "25-Nov-2012",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/image56.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#D46E89",
+                                "Salary": "20000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            }
+                        },
+                        {
+                            "Id": 37,
+                            "Name": "Zbyszek Piestrzen",
+                            "ContactNo": "7899896099",
+                            "Designation": "SR",
+                            "Doj": "25-Nov-2012",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/image56.png",
+                            "IsExpand": "None",
+                            "RatingColor": "#D46E89",
+                            "Salary": "20000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ]
+                        }
+                        ]
+                    }
+                    ]
+                },
+                {
+                    "Id": 38,
+                    "Name": "Thomas",
+                    "ContactNo": "7899896099",
+                    "Designation": "Project Manager",
+                    "Doj": "07-August-2011",
+                    "EmailId": "joplin@xyz.com",
+                    "ImageUrl": "../images/orgchart/Thomas.PNG",
+                    "IsExpand": "true",
+                    "RatingColor": "#68C2DE",
+                    "Salary": "80000",
+                    "Employee.BitImag": [
+                    {
+                        "UriSource": "{Binding ImageUrl}"
+                    }
+                    ],
+                    "Employee": {
+                        "Id": 39,
+                        "Name": "Steve",
+                        "ContactNo": "7899896099",
+                        "Designation": "Project Lead",
+                        "Doj": "21-Sep-2011",
+                        "EmailId": "joplin@xyz.com",
+                        "ImageUrl": "../images/orgchart/image54.png",
+                        "IsExpand": "true",
+                        "RatingColor": "#93B85A",
+                        "Salary": "70000",
+                        "Employee.BitImag": [
+                        {
+                            "UriSource": "{Binding ImageUrl}"
+                        }
+                        ],
+                        "Employee": [
+                        {
+                            "Id": 40,
+                            "Name": "Ann Devon",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "21-Sep-2011",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/image54.png",
+                            "IsExpand": "false",
+                            "RatingColor": "#93B85A",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ],
+                            "Employee": [
+                            {
+                                "Id": 41,
+                                "Name": "Eduardo Saavedra",
+                                "ContactNo": "7899896099",
+                                "Designation": "S/w Engg",
+                                "Doj": "21-Sep-2011",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/image54.png",
+                                "IsExpand": "false",
+                                "RatingColor": "#93B85A",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ],
+                                "Employee": {
+                                    "Id": 42,
+                                    "Name": "André Fonseca",
+                                    "ContactNo": "7899896099",
+                                    "Designation": "Project Trainee",
+                                    "Doj": "21-Sep-2011",
+                                    "EmailId": "joplin@xyz.com",
+                                    "ImageUrl": "../images/orgchart/image54.png",
+                                    "IsExpand": "false",
+                                    "RatingColor": "#93B85A",
+                                    "Salary": "40000",
+                                    "Employee.BitImag": [
+                                    {
+                                        "UriSource": "{Binding ImageUrl}"
+                                    }
+                                    ],
+                                    "Employee": [
+                                    {
+                                        "Id": 43,
+                                        "Name": "Mario Pontes",
+                                        "ContactNo": "7899896099",
+                                        "Designation": "Project Trainee",
+                                        "Doj": "21-Sep-2011",
+                                        "EmailId": "joplin@xyz.com",
+                                        "ImageUrl": "../images/orgchart/image54.png",
+                                        "IsExpand": "None",
+                                        "RatingColor": "#93B85A",
+                                        "Salary": "30000",
+                                        "Employee.BitImag": [
+                                        {
+                                            "UriSource": "{Binding ImageUrl}"
+                                        }
+                                        ]
+                                    },
+                                    {
+                                        "Id": 44,
+                                        "Name": "Manuel Pereira",
+                                        "ContactNo": "7899896099",
+                                        "Designation": "Project Trainee",
+                                        "Doj": "21-Sep-2011",
+                                        "EmailId": "joplin@xyz.com",
+                                        "ImageUrl": "../images/orgchart/image54.png",
+                                        "IsExpand": "None",
+                                        "RatingColor": "#93B85A",
+                                        "Salary": "30000",
+                                        "Employee.BitImag": [
+                                        {
+                                            "UriSource": "{Binding ImageUrl}"
+                                        }
+                                        ]
+                                    }
+                                    ]
+                                }
+                            },
+                            {
+                                "Id": 45,
+                                "Name": "José Pedro Freyre",
+                                "ContactNo": "7899896099",
+                                "Designation": "SR",
+                                "Doj": "21-Sep-2011",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/image54.png",
+                                "IsExpand": "false",
+                                "RatingColor": "#93B85A",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ],
+                                "Employee": {
+                                    "Id": 46,
+                                    "Name": "Howard Snyder",
+                                    "ContactNo": "7899896099",
+                                    "Designation": "SR",
+                                    "Doj": "21-Sep-2011",
+                                    "EmailId": "joplin@xyz.com",
+                                    "ImageUrl": "../images/orgchart/image54.png",
+                                    "IsExpand": "false",
+                                    "RatingColor": "#93B85A",
+                                    "Salary": "40000",
+                                    "Employee.BitImag": [
+                                    {
+                                        "UriSource": "{Binding ImageUrl}"
+                                    }
+                                    ],
+                                    "Employee": [
+                                    {
+                                        "Id": 47,
+                                        "Name": "Carlos Hernández",
+                                        "ContactNo": "7899896099",
+                                        "Designation": "SR",
+                                        "Doj": "21-Sep-2011",
+                                        "EmailId": "joplin@xyz.com",
+                                        "ImageUrl": "../images/orgchart/image54.png",
+                                        "IsExpand": "None",
+                                        "RatingColor": "#93B85A",
+                                        "Salary": "30000",
+                                        "Employee.BitImag": [
+                                        {
+                                            "UriSource": "{Binding ImageUrl}"
+                                        }
+                                        ]
+                                    },
+                                    {
+                                        "Id": 48,
+                                        "Name": "Yoshi Latimer",
+                                        "ContactNo": "7899896099",
+                                        "Designation": "SR",
+                                        "Doj": "21-Sep-2011",
+                                        "EmailId": "joplin@xyz.com",
+                                        "ImageUrl": "../images/orgchart/image54.png",
+                                        "IsExpand": "None",
+                                        "RatingColor": "#93B85A",
+                                        "Salary": "30000",
+                                        "Employee.BitImag": [
+                                        {
+                                            "UriSource": "{Binding ImageUrl}"
+                                        }
+                                        ]
+                                    }
+                                    ]
+                                }
+                            }
+                            ]
+                        },
+                        {
+                            "Id": 49,
+                            "Name": "Peter",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "16-July-2012",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/image57.png",
+                            "IsExpand": "false",
+                            "RatingColor": "#93B85A",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ],
+                            "Employee": [
+                            {
+                                "Id": 50,
+                                "Name": "Kenny",
+                                "ContactNo": "7899896099",
+                                "Designation": "S/w Engg",
+                                "Doj": "12-Jan-2013",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/image2.png",
+                                "IsExpand": "false",
+                                "RatingColor": "#D46E89",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ],
+                                "Employee": [
+                                {
+                                    "Id": 51,
+                                    "Name": "Patricia McKenna",
+                                    "ContactNo": "7899896099",
+                                    "Designation": "Project Trainee",
+                                    "Doj": "12-Feb-2013",
+                                    "EmailId": "joplin@xyz.com",
+                                    "ImageUrl": "../images/orgchart/image56.png",
+                                    "IsExpand": "None",
+                                    "RatingColor": "#93B85A",
+                                    "Salary": "50000",
+                                    "Employee.BitImag": [
+                                    {
+                                        "UriSource": "{Binding ImageUrl}"
+                                    }
+                                    ]
+                                },
+                                {
+                                    "Id": 52,
+                                    "Name": "Helen Bennett",
+                                    "ContactNo": "7899896099",
+                                    "Designation": "S/w Engg",
+                                    "Doj": "12-Feb-2013",
+                                    "EmailId": "joplin@xyz.com",
+                                    "ImageUrl": "../images/orgchart/image56.png",
+                                    "IsExpand": "false",
+                                    "RatingColor": "#EBB92E",
+                                    "Salary": "10000",
+                                    "Employee.BitImag": [
+                                    {
+                                        "UriSource": "{Binding ImageUrl}"
+                                    }
+                                    ]
+                                },
+                                    {
+                                        "Id": 53,
+                                        "Name": "Renate Messner",
+                                        "ContactNo": "7899896099",
+                                        "Designation": "Project Trainee",
+                                        "Doj": "12-Feb-2013",
+                                        "EmailId": "joplin@xyz.com",
+                                        "ImageUrl": "../images/orgchart/image56.png",
+                                        "IsExpand": "None",
+                                        "RatingColor": "#93B85A",
+                                        "Salary": "10000",
+                                        "Employee.BitImag": [
+                                        {
+                                            "UriSource": "{Binding ImageUrl}"
+                                        }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": 54,
+                                "Name": "Angel",
+                                "ContactNo": "7899896099",
+                                "Designation": "S/w Engg",
+                                "Doj": "12-Feb-2013",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/image56.png",
+                                "IsExpand": "false",
+                                "RatingColor": "#EBB92E",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ],
+                                "Employee": [
+                                {
+                                    "Id": 55,
+                                    "Name": "Philip Cramer",
+                                    "ContactNo": "7899896099",
+                                    "Designation": "Project Trainee",
+                                    "Doj": "12-Feb-2013",
+                                    "EmailId": "joplin@xyz.com",
+                                    "ImageUrl": "../images/orgchart/image56.png",
+                                    "IsExpand": "false",
+                                    "RatingColor": "#EBB92E",
+                                    "Salary": "40000",
+                                    "Employee.BitImag": [
+                                    {
+                                        "UriSource": "{Binding ImageUrl}"
+                                    }
+                                    ],
+                                    "Employee": {
+                                        "Id": 56,
+                                        "Name": "Annette Roulet",
+                                        "ContactNo": "7899896099",
+                                        "Designation": "Project Trainee",
+                                        "Doj": "12-Feb-2013",
+                                        "EmailId": "joplin@xyz.com",
+                                        "ImageUrl": "../images/orgchart/image56.png",
+                                        "IsExpand": "None",
+                                        "RatingColor": "#EBB92E",
+                                        "Salary": "40000",
+                                        "Employee.BitImag": [
+                                        {
+                                            "UriSource": "{Binding ImageUrl}"
+                                        }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "Id": 57,
+                                    "Name": "Daniel Tonini",
+                                    "ContactNo": "7899896099",
+                                    "Designation": "Project Trainee",
+                                    "Doj": "12-Feb-2013",
+                                    "EmailId": "joplin@xyz.com",
+                                    "ImageUrl": "../images/orgchart/image56.png",
+                                    "IsExpand": "false",
+                                    "RatingColor": "#EBB92E",
+                                    "Salary": "40000",
+                                    "Employee.BitImag": [
+                                    {
+                                        "UriSource": "{Binding ImageUrl}"
+                                    }
+                                    ],
+                                    "Employee": {
+                                        "Id": 58,
+                                        "Name": "Yoshi Tannamuri",
+                                        "ContactNo": "7899896099",
+                                        "Designation": "SR",
+                                        "Doj": "12-Feb-2013",
+                                        "EmailId": "joplin@xyz.com",
+                                        "ImageUrl": "../images/orgchart/image56.png",
+                                        "IsExpand": "None",
+                                        "RatingColor": "#EBB92E",
+                                        "Salary": "30000",
+                                        "Employee.BitImag": [
+                                        {
+                                            "UriSource": "{Binding ImageUrl}"
+                                        }
+                                        ]
+                                    }
+                                }
+                                ]
+                            }
+                            ]
+                        }
+                        ]
+                    }
+                },
+                {
+                    "Id": 59,
+                    "Name": "Maria Anders",
+                    "ContactNo": "7899896099",
+                    "Designation": "Project Manager",
+                    "Doj": "12/April/2010",
+                    "EmailId": "joplin@xyz.com",
+                    "ImageUrl": "../images/orgchart/Thomas.PNG",
+                    "IsExpand": "true",
+                    "RatingColor": "#68C2DE",
+                    "Salary": "80000",
+                    "Employee.BitImag": [
+                    {
+                        "UriSource": "{Binding ImageUrl}"
+                    }
+                    ],
+                    "Employee": [
+                    {
+                        "Id": 60,
+                        "Name": "Hanna Moos",
+                        "ContactNo": "7899896099",
+                        "Designation": "Project Lead",
+                        "Doj": "12/April/2010",
+                        "EmailId": "joplin@xyz.com",
+                        "ImageUrl": "../images/orgchart/Thomas.PNG",
+                        "IsExpand": "true",
+                        "RatingColor": "#68C2DE",
+                        "Salary": "70000",
+                        "Employee.BitImag": [
+                        {
+                            "UriSource": "{Binding ImageUrl}"
+                        }
+                        ],
+                        "Employee": {
+                            "Id": 61,
+                            "Name": "Jytte Petersen",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "12/April/2010",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/Thomas.PNG",
+                            "IsExpand": "false",
+                            "RatingColor": "#68C2DE",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ],
+                            "Employee": [
+                            {
+                                "Id": 62,
+                                "Name": "Jose Pavarotti",
+                                "ContactNo": "7899896099",
+                                "Designation": "Project Trainee",
+                                "Doj": "12/April/2010",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/Thomas.PNG",
+                                "IsExpand": "None",
+                                "RatingColor": "#68C2DE",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            },
+                            {
+                                "Id": 63,
+                                "Name": "Dominique Perrier",
+                                "ContactNo": "7899896099",
+                                "Designation": "Project Trainee",
+                                "Doj": "12/April/2010",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/Thomas.PNG",
+                                "IsExpand": "None",
+                                "RatingColor": "#68C2DE",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            },
+                            {
+                                "Id": 64,
+                                "Name": "Art Braunschweiger",
+                                "ContactNo": "7899896099",
+                                "Designation": "S/w Engg",
+                                "Doj": "12/April/2010",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/Thomas.PNG",
+                                "IsExpand": "false",
+                                "RatingColor": "#68C2DE",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ],
+                                "Employee": [
+                                {
+                                    "Id": 65,
+                                    "Name": "Pascale Cartrain",
+                                    "ContactNo": "7899896099",
+                                    "Designation": "Project Trainee",
+                                    "Doj": "12/April/2010",
+                                    "EmailId": "joplin@xyz.com",
+                                    "ImageUrl": "../images/orgchart/Thomas.PNG",
+                                    "IsExpand": "None",
+                                    "RatingColor": "#68C2DE",
+                                    "Salary": "40000",
+                                    "Employee.BitImag": [
+                                    {
+                                        "UriSource": "{Binding ImageUrl}"
+                                    }
+                                    ]
+                                },
+                                {
+                                    "Id": 66,
+                                    "Name": "Liz Nixon",
+                                    "ContactNo": "7899896099",
+                                    "Designation": "Project Trainee",
+                                    "Doj": "12/April/2010",
+                                    "EmailId": "joplin@xyz.com",
+                                    "ImageUrl": "../images/orgchart/Thomas.PNG",
+                                    "IsExpand": "None",
+                                    "RatingColor": "#68C2DE",
+                                    "Salary": "40000",
+                                    "Employee.BitImag": [
+                                    {
+                                        "UriSource": "{Binding ImageUrl}"
+                                    }
+                                    ]
+                                }
+                                ]
+                            }
+                            ]
+                        }
+                    },
+                    {
+                        "Id": 67,
+                        "Name": "Yang Wang",
+                        "ContactNo": "7899896099",
+                        "Designation": "Project Lead",
+                        "Doj": "12/April/2010",
+                        "EmailId": "joplin@xyz.com",
+                        "ImageUrl": "../images/orgchart/Thomas.PNG",
+                        "IsExpand": "true",
+                        "RatingColor": "#68C2DE",
+                        "Salary": "70000",
+                        "Employee.BitImag": [
+                        {
+                            "UriSource": "{Binding ImageUrl}"
+                        }
+                        ],
+                        "Employee": [{
+                            "Id": 68,
+                            "Name": "Yoshi Berglund",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "12/April/2010",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/Thomas.PNG",
+                            "IsExpand": "false",
+                            "RatingColor": "#68C2DE",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ],
+
+                            "Employee": {
+                                "Id": 69,
+                                "Name": "Liu Wong",
+                                "ContactNo": "7899896099",
+                                "Designation": "Project Trainee",
+                                "Doj": "12/April/2010",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/Thomas.PNG",
+                                "IsExpand": "false",
+                                "RatingColor": "#68C2DE",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ],
+                                "Employee": [
+                                {
+
+                                    "Id": 70,
+                                    "Name": "Karin Josephs",
+                                    "ContactNo": "7899896099",
+                                    "Designation": "S/w Engg",
+                                    "Doj": "12/April/2010",
+                                    "EmailId": "joplin@xyz.com",
+                                    "ImageUrl": "../images/orgchart/Thomas.PNG",
+                                    "IsExpand": "None",
+                                    "RatingColor": "#68C2DE",
+                                    "Salary": "40000",
+                                    "Employee.BitImag": [
+                                    {
+                                        "UriSource": "{Binding ImageUrl}"
+                                    }
+                                    ]
+                                },
+                                {
+                                    "Id": 71,
+                                    "Name": "Miguel Angel Paolino",
+                                    "ContactNo": "7899896099",
+                                    "Designation": "Project Trainee",
+                                    "Doj": "12/April/2010",
+                                    "EmailId": "joplin@xyz.com",
+                                    "ImageUrl": "../images/orgchart/Thomas.PNG",
+                                    "IsExpand": "None",
+                                    "RatingColor": "#68C2DE",
+                                    "Salary": "40000",
+                                    "Employee.BitImag": [
+                                    {
+                                        "UriSource": "{Binding ImageUrl}"
+                                    }
+                                    ]
+                                }
+                                ]
+                            }
+                        }
+
+                        ]
+                    },
+                {
+                    "Id": 72,
+                    "Name": "Ana Trujillo",
+                    "ContactNo": "7899896099",
+                    "Designation": "Project Manager",
+                    "Doj": "15-Nov-2010",
+                    "EmailId": "joplin@xyz.com",
+                    "ImageUrl": "../images/orgchart/Robin.PNG",
+                    "IsExpand": "true",
+                    "RatingColor": "#68C2DE",
+                    "Salary": "80000",
+                    "Employee.BitImag": [
+                    {
+                        "UriSource": "{Binding ImageUrl}"
+                    }
+                    ],
+                    "Employee": [
+                    {
+                        "Id": 73,
+                        "Name": "Antonio Moreno",
+                        "ContactNo": "7899896099",
+                        "Designation": "Project Lead",
+                        "Doj": "12-May-2011",
+                        "EmailId": "joplin@xyz.com",
+                        "ImageUrl": "../images/orgchart/Clayton.png",
+                        "IsExpand": "true",
+                        "RatingColor": "#93B85A",
+                        "Salary": "70000",
+                        "Employee.BitImag": [
+                        {
+                            "UriSource": "{Binding ImageUrl}"
+                        }
+                        ],
+                        "Employee": [
+                        {
+                            "Id": 74,
+                            "Name": "Thomas Hardy",
+                            "ContactNo": "7899896099",
+                            "Designation": "Project Trainee",
+                            "Doj": "23-March-2013",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/images7.png",
+                            "IsExpand": "None",
+                            "RatingColor": "#D46E89",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ]
+                        },
+                        {
+                            "Id": 75,
+                            "Name": "Christina Berglund",
+                            "ContactNo": "7899896099",
+                            "Designation": "Project Trainee",
+                            "Doj": "13-March-2013",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/John.png",
+                            "IsExpand": "None",
+                            "RatingColor": "#EBB92E",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ]
+                        }
+                        ]
+                    },
+                    {
+                        "Id": 76,
+                        "Name": "Frédérique Citeaux",
+                        "ContactNo": "7899896099",
+                        "Designation": "Project Lead",
+                        "Doj": "18-dec-2010",
+                        "EmailId": "joplin@xyz.com",
+                        "ImageUrl": "../images/orgchart/image12.png",
+                        "IsExpand": "false",
+                        "RatingColor": "#68C2DE",
+                        "Salary": "70000",
+                        "Employee.BitImag": [
+                        {
+                            "UriSource": "{Binding ImageUrl}"
+                        }
+                        ],
+                        "Employee": [
+                        {
+                            "Id": 77,
+                            "Name": "Martín Sommer",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "25-Nov-2012",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/image56.png",
+                            "IsExpand": "None",
+                            "RatingColor": "#D46E89",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ]
+                        },
+                        {
+                            "Id": 78,
+                            "Name": "Laurence Lebihan",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "25-Nov-2012",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/image56.png",
+                            "IsExpand": "None",
+                            "RatingColor": "#D46E89",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ]
+                        },
+                        {
+                            "Id": 79,
+                            "Name": "Elizabeth Lincoln",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "25-Nov-2012",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/image56.png",
+                            "IsExpand": "false",
+                            "RatingColor": "#D46E89",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ],
+                            "Employee": [
+                            {
+                                "Id": 80,
+                                "Name": "Victoria Ashworth",
+                                "ContactNo": "7899896099",
+                                "Designation": "Project Trainee",
+                                "Doj": "25-Nov-2012",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/image56.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#D46E89",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            },
+                            {
+                                "Id": 81,
+                                "Name": "Patricio Simpson",
+                                "ContactNo": "7899896099",
+                                "Designation": "S/w Engg",
+                                "Doj": "25-Nov-2012",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/image56.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#D46E89",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            }
+                            ]
+                        }
+                        ]
+                    }
+                    ]
+                },
+                {
+                    "Id": 82,
+                    "Name": "Roland Mendel",
+                    "ContactNo": "7899896099",
+                    "Designation": "Project Manager",
+                    "Doj": "12-May-2011",
+                    "EmailId": "joplin@xyz.com",
+                    "ImageUrl": "../images/orgchart/Clayton.png",
+                    "IsExpand": "false",
+                    "RatingColor": "#93B85A",
+                    "Salary": "80000",
+                    "Employee.BitImag": [
+                    {
+                        "UriSource": "{Binding ImageUrl}"
+                    }
+                    ],
+                    "Employee": [
+                    {
+                        "Id": 83,
+                        "Name": "Aria Cruz",
+                        "ContactNo": "7899896099",
+                        "Designation": "Project Lead",
+                        "Doj": "23-March-2013",
+                        "EmailId": "joplin@xyz.com",
+                        "ImageUrl": "../images/orgchart/images7.png",
+                        "IsExpand": "false",
+                        "RatingColor": "#D46E89",
+                        "Salary": "70000",
+                        "Employee.BitImag": [
+                        {
+                            "UriSource": "{Binding ImageUrl}"
+                        }
+                        ],
+                        "Employee": [
+                        {
+                            "Id": 84,
+                            "Name": "Martine Rancé",
+                            "ContactNo": "7899896099",
+                            "Designation": "Project Trainee",
+                            "Doj": "23-March-2013",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/images7.png",
+                            "IsExpand": "None",
+                            "RatingColor": "#D46E89",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ]
+                        },
+                        {
+                            "Id": 85,
+                            "Name": "Lino Rodriguez",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "23-March-2013",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/images7.png",
+                            "IsExpand": "None",
+                            "RatingColor": "#D46E89",
+                            "Salary": "70000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ]
+                        }
+                        ]
+                    },
+                    {
+                        "Id": 86,
+                        "Name": "Diego Roel",
+                        "ContactNo": "7899896099",
+                        "Designation": "Project Lead",
+                        "Doj": "13-March-2013",
+                        "EmailId": "joplin@xyz.com",
+                        "ImageUrl": "../images/orgchart/John.png",
+                        "IsExpand": "false",
+                        "RatingColor": "#EBB92E",
+                        "Salary": "70000",
+                        "Employee.BitImag": [
+                        {
+                            "UriSource": "{Binding ImageUrl}"
+                        }
+                        ],
+                        "Employee": [{
+                            "Id": 87,
+                            "Name": "Maria Larsson",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "23-March-2013",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/images7.png",
+                            "IsExpand": "None",
+                            "RatingColor": "#D46E89",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ]
+                        }]
+                    },
+                    {
+                        "Id": 88,
+                        "Name": "Peter Franken",
+                        "ContactNo": "7899896099",
+                        "Designation": "Project Lead",
+                        "Doj": "12-May-2011",
+                        "EmailId": "joplin@xyz.com",
+                        "ImageUrl": "../images/orgchart/Clayton.png",
+                        "IsExpand": "false",
+                        "RatingColor": "#93B85A",
+                        "Salary": "70000",
+                        "Employee.BitImag": [
+                        {
+                            "UriSource": "{Binding ImageUrl}"
+                        }
+                        ],
+                        "Employee": [{
+                            "Id": 89,
+                            "Name": "Paolo Accorti",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "12-May-2011",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/Clayton.png",
+                            "IsExpand": "None",
+                            "RatingColor": "#93B85A",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ]
+                        }]
+                    },
+                    {
+                        "Id": 90,
+                        "Name": "Carine Schmitt",
+                        "ContactNo": "7899896099",
+                        "Designation": "Senior S/w Engg",
+                        "Doj": "12-May-2011",
+                        "EmailId": "joplin@xyz.com",
+                        "ImageUrl": "../images/orgchart/Clayton.png",
+                        "IsExpand": "None",
+                        "RatingColor": "#93B85A",
+                        "Salary": "70000",
+                        "Employee.BitImag": [
+                        {
+                            "UriSource": "{Binding ImageUrl}"
+                        }
+                        ]
+                    }
+                    ]
+                },
+                {
+                    "Id": 91,
+                    "Name": "Jean Fresnière",
+                    "ContactNo": "7899896099",
+                    "Designation": "Project Manager",
+                    "Doj": "23-March-2013",
+                    "EmailId": "joplin@xyz.com",
+                    "ImageUrl": "../images/orgchart/images7.png",
+                    "IsExpand": "true",
+                    "RatingColor": "#D46E89",
+                    "Salary": "80000",
+                    "Employee.BitImag": [
+                    {
+                        "UriSource": "{Binding ImageUrl}"
+                    }
+                    ],
+                    "Employee": [
+                    {
+                        "Id": 92,
+                        "Name": "Alexander Feuer",
+                        "ContactNo": "7899896099",
+                        "Designation": "Project Lead",
+                        "Doj": "23-March-2013",
+                        "EmailId": "joplin@xyz.com",
+                        "ImageUrl": "../images/orgchart/images7.png",
+                        "IsExpand": "false",
+                        "RatingColor": "#D46E89",
+                        "Salary": "70000",
+                        "Employee.BitImag": [
+                        {
+                            "UriSource": "{Binding ImageUrl}"
+                        }
+                        ],
+                        "Employee": [
+                        {
+                            "Id": 93,
+                            "Name": "Yvonne Moncada",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "23-March-2013",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/images7.png",
+                            "IsExpand": "false",
+                            "RatingColor": "#D46E89",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ],
+                            "Employee": [
+                            {
+                                "Id": 94,
+                                "Name": "Georg Pipps",
+                                "ContactNo": "7899896099",
+                                "Designation": "Project Trainee",
+                                "Doj": "23-March-2013",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/images7.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#D46E89",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            },
+                            {
+                                "Id": 95,
+                                "Name": "Isabel de Castro",
+                                "ContactNo": "7899896099",
+                                "Designation": "Senior S/w Engg",
+                                "Doj": "23-March-2013",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/images7.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#D46E89",
+                                "Salary": "60000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            },
+                            {
+                                "Id": 96,
+                                "Name": "Bernardo Batista",
+                                "ContactNo": "7899896099",
+                                "Designation": "Senior S/w Engg",
+                                "Doj": "23-March-2013",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/images7.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#D46E89",
+                                "Salary": "60000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            }
+                            ]
+                        },
+                        {
+                            "Id": 97,
+                            "Name": "Rene Phillips",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "23-March-2013",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/images7.png",
+                            "IsExpand": "false",
+                            "RatingColor": "#D46E89",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ],
+                            "Employee": [
+                            {
+                                "Id": 98,
+                                "Name": "Lúcia Carvalho",
+                                "ContactNo": "7899896099",
+                                "Designation": "S/w Engg",
+                                "Doj": "23-March-2013",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/images7.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#D46E89",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            },
+                            {
+                                "Id": 99,
+                                "Name": "Horst Kloss",
+                                "ContactNo": "7899896099",
+                                "Designation": "Project Trainee",
+                                "Doj": "23-March-2013",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/images7.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#D46E89",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            },
+                            {
+                                "Id": 100,
+                                "Name": "Sergio Gutiérrez",
+                                "ContactNo": "7899896099",
+                                "Designation": "Project Trainee",
+                                "Doj": "23-March-2013",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/images7.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#D46E89",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            }
+                            ]
+                        }
+                        ]
+                    },
+                    {
+                        "Id": 101,
+                        "Name": "Simon Crowther",
+                        "ContactNo": "7899896099",
+                        "Designation": "Project Lead",
+                        "Doj": "23-March-2013",
+                        "EmailId": "joplin@xyz.com",
+                        "ImageUrl": "../images/orgchart/images7.png",
+                        "IsExpand": "true",
+                        "RatingColor": "#93B85A",
+                        "Salary": "70000",
+                        "Employee.BitImag": [
+                        {
+                            "UriSource": "{Binding ImageUrl}"
+                        }
+                        ],
+                        "Employee": [
+                        {
+                            "Id": 102,
+                            "Name": "Henriette Pfalzheim",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "23-March-2013",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/images7.png",
+                            "IsExpand": "false",
+                            "RatingColor": "#D46E89",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ],
+                            "Employee": [
+                            {
+                                "Id": 103,
+                                "Name": "Paula Wilson",
+                                "ContactNo": "7899896099",
+                                "Designation": "Project Trainee",
+                                "Doj": "23-March-2013",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/images7.png",
+                                "IsExpand": "true",
+                                "RatingColor": "#D46E89",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            },
+                            {
+                                "Id": 104,
+                                "Name": "Ashok",
+                                "ContactNo": "7899896099",
+                                "Designation": "Project Trainee",
+                                "Doj": "23-March-2013",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/images7.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#93B85A",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            },
+                            {
+                                "Id": 105,
+                                "Name": "Maurizio Moroni",
+                                "ContactNo": "7899896099",
+                                "Designation": "Project Trainee",
+                                "Doj": "23-March-2013",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/images7.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#D46E89",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            }
+                            ]
+                        },
+                        {
+                            "Id": 106,
+                            "Name": "Janete Limeira",
+                            "ContactNo": "7899896099",
+                            "Designation": "Senior S/w Engg",
+                            "Doj": "23-March-2013",
+                            "EmailId": "joplin@xyz.com",
+                            "ImageUrl": "../images/orgchart/images7.png",
+                            "IsExpand": "false",
+                            "RatingColor": "#D46E89",
+                            "Salary": "60000",
+                            "Employee.BitImag": [
+                            {
+                                "UriSource": "{Binding ImageUrl}"
+                            }
+                            ],
+                            "Employee": [
+                            {
+                                "Id": 107,
+                                "Name": "Michael Holz",
+                                "ContactNo": "7899896099",
+                                "Designation": "Project Trainee",
+                                "Doj": "23-March-2013",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/images7.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#D46E89",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            },
+                            {
+                                "Id": 108,
+                                "Name": "Alejandra Camino",
+                                "ContactNo": "7899896099",
+                                "Designation": "Project Trainee",
+                                "Doj": "23-March-2013",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/images7.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#93B85A",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            },
+                            {
+                                "Id": 109,
+                                "Name": "Jonas Bergulfsen",
+                                "ContactNo": "7899896099",
+                                "Designation": "Project Trainee",
+                                "Doj": "23-March-2013",
+                                "EmailId": "joplin@xyz.com",
+                                "ImageUrl": "../images/orgchart/images7.png",
+                                "IsExpand": "None",
+                                "RatingColor": "#D46E89",
+                                "Salary": "50000",
+                                "Employee.BitImag": [
+                                {
+                                    "UriSource": "{Binding ImageUrl}"
+                                }
+                                ]
+                            }
+                            ]
+                        }
+                        ]
+                    }
+                    ]
+                }
+                    ]
+                }]
+                }
+            }
+        }

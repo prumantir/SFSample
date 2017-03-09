@@ -1,0 +1,98 @@
+﻿@using Syncfusion.JavaScript
+@using Syncfusion.MVC.EJ
+@using Syncfusion.JavaScript.DataVisualization
+@using Syncfusion.JavaScript.DataVisualization.Models
+@{
+    ViewBag.Title = "TreeMap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>TreeMap:</h2>
+<br/>
+<li> TreeMap Samples - Flat Collection</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+<div>
+     @{
+        var datasource = ViewData["Population"];
+     }
+    <div style="height:300px;width:1000px;">
+       @(Html.EJ().TreeMap("treemap")
+                .DataSource(datasource)
+                .ColorValuePath("Growth")
+                .WeightValuePath("Population")
+                .ShowLegend(true)
+                                .TreeMapLegend(tl =>
+                    {
+                        tl.IconWidth(17)
+                            .IconHeight(17)
+                            .DockPosition(TreeMapDockPosition.Top)
+                            .Height(40)
+                            .Width(600);
+                    })
+               .LeafItemsSetting(lls =>
+                   {
+                       lls.ShowLabels(true)
+                          .LabelPath("Country");
+                   })
+                .Levels(lv =>
+                    {
+                        lv.GroupPath("Continent")
+                            .GroupGap(5)
+                            .HeaderHeight(25)
+                            .Add();
+                    })
+                .TreeMapRangeColorMappings(cm =>
+                    {
+                        cm.To(1).From(0).Color("#77D8D8").Legendlabel("1% Growth").Add();
+                        cm.To(2).From(0).Color("#AED960").Legendlabel("2% Growth").Add();
+                        cm.To(3).From(0).Color("#FFAF51").Legendlabel("3% Growth").Add();
+                        cm.To(4).From(0).Color("#F3D240").Legendlabel("4% Growth").Add();
+                    })
+               )
+    <div id="headertemplate" style="display: none;">
+	  <div>
+            <label style="color:gray;font-size:16px;font-weight:normal;" id="Label1">{{:header}}</label><br />            
+      </div>                        
+    </div>      
+    <div id="labeltemplate" style="display: none;">
+	    <div style="background-color: transparent;">
+            <label style="color:white;font-size:large;font-weight:normal;" id="Label2">{{:label}}</label><br />            
+        </div>                        
+    </div>    
+    <div style="border-width: 2px;opacity: 0.7;left: 1100px;top: 200px;position: absolute;height: 60px" >
+    <div id="sampleProperties">			
+                <div class="prop-grid">
+                    <div class="row">
+                       <div class="col-md-3" >
+                            Layout Type
+                        </div>
+                        <div class="col-md-3">
+                            @(Html.EJ().DropDownList("layouttype").Datasource((IEnumerable<string>)ViewBag.datasource).ClientSideEvents(ce=>ce.Select("onchange")).Width("120px").SelectedItemIndex(0).Height("28px"))
+                        </div>
+					</div>
+                </div>
+            </div>
+        </div>
+        </div>
+    <script>      
+        function onchange(args) {
+            var treemapObj = $("#treemap").data("ejTreeMap");
+            if (treemapObj != null) {
+                if (args.selectedText == "Squarified") {
+                    treemapObj.option("itemsLayoutMode", ej.datavisualization.TreeMap.ItemsLayoutMode.Squarified);
+                }
+                else if (args.selectedText == "SliceAndDiceH") {
+                    treemapObj.option("itemsLayoutMode", ej.datavisualization.TreeMap.ItemsLayoutMode.SliceAndDiceHorizontal);
+                }
+                else if (args.selectedText == "SliceAndDiceV") {
+                    treemapObj.option("itemsLayoutMode", ej.datavisualization.TreeMap.ItemsLayoutMode.SliceAndDiceVertical);
+                }
+                else if (args.selectedText == "SliceAndDiceAuto") {
+                    treemapObj.option("itemsLayoutMode", ej.datavisualization.TreeMap.ItemsLayoutMode.SliceAndDiceAuto);
+                }
+            }
+        }
+    </script>
+</div>     
+</div>

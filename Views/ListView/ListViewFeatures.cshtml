@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "ListView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>ListView Features:</h2>
+<br/>
+<li> ListView Samples - CheckList</li>
+<br/>
+<div id = "ControlRegion">
+@Html.EJ().ListView("checklist").ShowHeader(false).Height(355).Width(400).EnableCheckMark(true).AllowScrolling(true).Items(items =>
+   {
+       items.Add().Text("Artwork");
+       items.Add().Text("Abstract");
+       items.Add().Text("2 Acrylic Mediums");
+       items.Add().Text("Creative Acrylic");
+       items.Add().Text("Modern Painting");
+       items.Add().Text("Canvas Art");
+       items.Add().Text("Black white");
+       items.Add().Text("Children");
+   })
+</div>

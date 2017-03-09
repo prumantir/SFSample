@@ -1,0 +1,77 @@
+﻿@using Syncfusion.JavaScript
+@using Syncfusion.MVC.EJ
+@using Syncfusion.JavaScript.DataVisualization
+@using Syncfusion.JavaScript.DataVisualization.Models
+@{
+    ViewBag.Title = "Maps";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>MapsFeatures</h2>
+<li> Maps Samples - Data Markers</li>
+<li> Maps Selection</li>
+<li> Zooming</li>
+<li> Navigation</li>
+<li> Theme - Flat-Saffron</li>
+<br/><br/>
+<div id = "ControlRegion">
+    @{
+            var datasource = ViewData["datasource"];
+            var mapData = ViewData["mapdata"];
+    }
+<div style="height:600px;width:1200px;">
+            @(Html.EJ().Map("container")
+           .ZoomSettings(zm=>
+            {
+              zm.EnableZoom(true);
+            })
+          .NavigationControl(nc =>
+                 {
+                     nc.EnableNavigation(true)
+                     .Orientation(Orientation.Vertical)
+                     .AbsolutePosition(new ShapePoint(5,10))
+                     .DockPosition(DockPosition.None);
+                 })
+           .Background("white")
+           .EnableAnimation(true)
+           .Layers(lr =>
+                    {
+                        lr.LayerType(LayerType.Geometry)
+                        .EnableSelection(true)
+                        .EnableAnimation(true)
+                        .EnableMouseHover(false)
+                        .Markers(datasource)
+                        .ShowMapItems(false)
+                        .MarkerTemplate("template")
+                        .ShapeSettings(sp =>
+                            {
+                                sp.Fill("#626171")
+                                .StrokeThickness(1)
+                                .Stroke("#6F6F79")
+                                .AutoFill(false)
+                                .HighlightStroke("#6F6F79")
+                                .ValuePath("name")
+                                .HighlightColor("gray");
+                            })
+                        .ShapeData(mapData).Add();
+                    })
+           )      
+   </div>
+    <div style="background-color: #FAFAF9;border-color: lightgray;border-width: 2px;opacity: 0.7;left: 330px;top: 200px;position: absolute;height: 60px" >
+        <label style="color:Black;font-size:22px;margin:15px;margin-top:10px;margin-left:15px;margin-right:20px;height:25px;font-weight:Normal;">Syncfusion Locations</label>   
+    </div>	
+    <div  id="template" style="display: none;">
+         <div  >
+             <div style="background-image:url(../Content/Images/Maps/pin.png);margin-top:-38px;margin-left:-11px;height:40px;width:26px;background-repeat:no-repeat;">
+              </div>
+				 <div  style="background-image:url(../Content/Images/Maps/mappath.png);margin-left:5px;height:45px;width:120px;margin-top:-15px;">
+				 	</div>
+                 <div style="margin-left:10px;height:45px;width:120px;margin-top:-42px;">					
+				 <label class="label1" style="color:white;margin-left:15px;font-weight:normal">{{:Name}}</label>
+				 <p/>
+				 <div style="margin-top:-15px;">
+				 <label  class="label2" style="color:white;margin-left:15px;font-weight:normal">{{:Country}}</label>
+				 </div>
+				 </div>
+           </div>    
+    </div> 
+     </div>

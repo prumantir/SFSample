@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Date Picker";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Date Picker Features:</h2>
+<br/>
+<li> Display - Default</li>
+<li> Other Month Dates</li>
+<li> RTL</li>
+<li> Date Format - MM/dd/yyyy</li>
+<li> Localization - en-US</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+       <div class="frame ">
+         <div class="control">
+            @Html.EJ().DatePicker("DatePick").DateFormat("MM/dd/yyyy").ShowOtherMonths(true).EnableRTL(true).Locale("en-US")
+         </div>
+       </div>    
+       <style>
+         .frame .control {
+            margin-left: 100px;
+         }
+       </style>
+</div>

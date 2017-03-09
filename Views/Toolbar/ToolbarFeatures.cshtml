@@ -1,0 +1,87 @@
+﻿@using SFSample
+@{
+    ViewBag.Title = "Toolbar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Toolbar Features:</h2>
+<br/>
+<li> Vertical Orientation</li>
+<li> RTL</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+<div class="control">
+        @Html.EJ().Toolbar("editingToolbar").Orientation(Orientation.Vertical).EnableRTL(true).Items(s =>
+                          {
+                              s.Add().SpriteCssClass("LeftAlign_tool").TooltipText("Left");
+                              s.Add().SpriteCssClass("CenterAlign_tool").TooltipText("Center");
+                              s.Add().SpriteCssClass("RightAlign_tool").TooltipText("Right");
+                              s.Add().SpriteCssClass("Justify_tool").TooltipText("Justify");
+                          }).Items(s1 =>
+                              {
+                                  s1.Add().SpriteCssClass("Bold_tool").TooltipText("Bold");
+                                  s1.Add().SpriteCssClass("Italic_tool").TooltipText("Italic");
+                                  s1.Add().SpriteCssClass("StrikeThrough_tool").TooltipText("StrikeThrough");
+                                  s1.Add().SpriteCssClass("Underline_tool").TooltipText("UnderLine");
+                              }).Width("30")
+    </div>
+<style type="text/css">
+.e-toolbar .e-ul .e-tooltxt > div{
+    display: block;
+    background-image: url('/Content/images/Toolbar/ui-icons-dark.png');
+    height: 22px;
+    width: 22px;
+}
+.LeftAlign_tool {
+    background-position: -26px -39px;
+}
+.CenterAlign_tool {
+    background-position: -55px -39px;
+}
+.RightAlign_tool {
+    background-position: -89px -39px;
+}
+.Justify_tool {
+    background-position: -123px -39px;
+}
+.Bold_tool {
+    background-position: -159px -39px;
+}
+.Italic_tool {
+    background-position: -196px -39px;
+}
+.StrikeThrough_tool {
+    background-position: -55px -70px;
+}
+.Underline_tool {
+    background-position: -23px -68px;
+}
+.frame {
+    height: 280px;
+    width: 700px;
+    border-radius: initial;
+    margin-left: 0;
+    margin-top: 40px;
+    padding: 0;
+}
+.control {
+    margin: 110px 185px 0;
+}
+.ctrllabel {
+    height: 28px;
+    width: 282px;
+    color: #FFFFFF;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-weight: normal;
+    background: #6d6e74; /* Old browsers */
+    background: -moz-linear-gradient(top, #6d6e74 0%, #4d4f53 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6d6e74), color-stop(100%,#4d4f53)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #6d6e74 0%,#4d4f53 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #6d6e74 0%,#4d4f53 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #6d6e74 0%,#4d4f53 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #6d6e74 0%,#4d4f53 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d6e74', endColorstr='#4d4f53',GradientType=0 ); /* IE6-9 */
+}
+</style>
+</div>

@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "SparkLine";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>SparkLine Features:</h2>
+<br/>
+<li> Default</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+<div>
+    <select onchange="changetype(this)">
+        <option value="line">Line</option>
+        <option value="area">Area</option>
+        <option value="column">Column</option>
+        <option value="winloss">Win-Loss</option>
+        <option value="pie">Pie</option>
+    </select>
+    @(Html.EJ().Sparkline("container").Load("databind").Size(sz=>sz.Height("400").Width("500")))
+</div>
+<script>
+    function databind(args) {
+        args.model.dataSource = getdata();
+    }
+    function changetype(tis) {
+        var obj = $("#container").ejSparkline("instance");
+        obj.model.type = tis.value;
+        obj.redraw();
+    }
+    function getdata() {
+        var data = [], i = 1;
+        for (; i <= 50; i++) {
+            if (Math.random() > 0.7)
+                data.push(-Math.random() * 100);
+            data.push(Math.random() * 100);
+        }
+        return data;
+    }
+</script>
+</div>

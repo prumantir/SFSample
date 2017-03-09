@@ -1,0 +1,18 @@
+﻿@using SFSample
+@{
+    ViewBag.Title = "TagCloud";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>TagCloud Features:</h2>
+<br/>
+<li> Default</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+@Html.EJ().TagCloud("techWebList").Datasource((IEnumerable<WebsiteCollection>)ViewBag.datasource).TagCloudFields(tag => tag.Text("text").Url("url").Frequency("frequency")).Title("Tech Sites")
+<style type="text/css">
+        #techWebList {
+            margin: 40px auto 0;
+        }
+</style>
+</div>

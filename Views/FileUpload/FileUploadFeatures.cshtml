@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "FileUpload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>File Upload:</h2>
+<br/>
+<div id = "ControlRegion">
+<div class="frame">
+        <div class="control">
+            Select a file to upload
+            <div class="posupload">
+                @Html.EJ().Uploadbox("UploadDefault").SaveUrl("SaveDefault").RemoveUrl("RemoveDefault")
+            </div>
+        </div>
+    </div>
+<style class="cssStyles">
+        .posupload
+        {
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        .frame
+        {
+            margin-top: 10%;
+        }
+        .control
+        {
+            margin-left: 10%;
+        }
+    </style>
+</div>

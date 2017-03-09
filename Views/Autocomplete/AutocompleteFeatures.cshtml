@@ -1,0 +1,40 @@
+﻿@using SFSample
+@{
+    ViewBag.Title = "Autocomplete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Autocomplete Features:</h2>
+<br/>
+<li> Multilpe Values</li>
+<li> Autofill</li>
+<li> RTL</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+<div class="frame">
+        <div class="control">
+            <div class="txt">
+                Select a car</div>
+  @Html.EJ().Autocomplete("selectcar").Width("205").EnableAutoFill(true).EnableRTL(true).Datasource((IEnumerable<CarsList>)ViewBag.datasource).AllowGrouping(false).HighlightSearch(false)
+    </div>
+</div>
+     <br />
+    <div class="frame1">
+        <div class="control" style="margin-right: 20px;">
+            <span class="txt">MultipleValues - Using Delimiter</span>
+             @Html.EJ().Autocomplete("delimit").Datasource((IEnumerable<CarsList>)ViewBag.datasource).Width("225").MultiSelectMode(MultiSelectModeTypes.Delimiter).ShowPopupButton(true).Delimiter(",").EnableRTL(true)
+       </div>
+        <br />
+    <div class="control">
+            <span class="txt">MultipleValues - Using VisualMode</span>
+           @Html.EJ().Autocomplete("visualmode").Datasource((IEnumerable<CarsList>)ViewBag.datasource).Width("225").MultiSelectMode(MultiSelectModeTypes.VisualMode).EnableRTL(true)
+        </div>
+    </div>
+<style type="text/css" class="cssStyles">
+        .txt
+        {
+            display: block;
+            margin-bottom: 12px;
+        }
+ </style>
+</div>

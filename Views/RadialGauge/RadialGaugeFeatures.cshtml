@@ -1,0 +1,304 @@
+﻿@{
+    ViewBag.Title = "RadialGauge";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using SFSample.Controllers.RadialGauge
+<h2>RadialGauge Features:</h2>
+<br/>
+<li> Scale</li>
+<li> Pointer</li>
+<li> Range</li>
+<li> Export Image</li>
+<li> Label Customization</li>
+<li> UserInteraction</li>
+<li> Multiple Pointers</li>
+<li> Custom Labels</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+ <script src="@Url.Content("~/Scripts/excanvas.min.js")"></script>
+<div id = "ControlRegion">
+<table>
+<table align="right" cellpadding="6" cellspacing="8" align="right" style="outline:solid" >
+                 <tr><td>
+                            ScaleBar Size </td>
+                                             <td>     @(Html.EJ().Slider("scalesize").SliderType(SlideType.MinRange).Value("1").Height("10").Width("120").MinValue(0).MaxValue(10).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange4").Slide("onchange4"); }))
+                        </td></tr>
+<tr><td>
+                            Scale Radius </td>
+                 <td>          @(Html.EJ().Slider("scaleradius").SliderType(SlideType.MinRange).Value("130").Height("10").Width("120").MinValue(120).MaxValue(131).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange4").Slide("onchange4"); }))
+</td></tr>
+                  <tr>      <td>    Border Width  </td>
+                    <td>       @(Html.EJ().Slider("borderwidth").SliderType(SlideType.MinRange).Value("0.5").Height("10").Width("120").MinValue(0).MaxValue(5).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange4").Slide("onchange4"); }))
+</td></tr>
+                     <tr><td>       Scale Direction </td>
+                     <td>       @(Html.EJ().DropDownList("scaleDirection").Datasource((IEnumerable<Directionr>)ViewBag.datasource4).DropDownListFields(df => df.ID("Direction").Text("Direction").Value("Direction")).SelectedItemIndex(0).ClientSideEvents(cli => { cli.Select("onchange4"); }))
+</td></tr>
+  <script>
+      $(document).ready(function () {
+          //$("#sampleProperties").ejPropertiesPanel();
+      });
+      function onchange4(args) {
+          gaugeval = $("#circulargauge").data("ejCircularGauge");
+          if (args.id == "scalesize") {
+              gaugeval.setScaleBarSize(0, args.value);
+          }
+          else if (args.id == "scaleradius") {
+              gaugeval.setScaleRadius(0, args.value);
+          }
+          else if (args.id == "borderwidth") {
+              gaugeval.setScaleBorderWidth(0, args.value);
+          }
+          else if (args.selectedText == "Clockwise") {
+              gaugeval.setScaleDirection(0, args.selectedText.toLowerCase());
+          }
+          else if (args.selectedText == "CounterClockwise") {
+              gaugeval.setScaleDirection(0, args.selectedText.toLowerCase());
+          }
+      }
+      </script>
+ <tr><td>
+                                Pointer Length </td>
+                                             <td>     @(Html.EJ().Slider("pointerlength").SliderType(SlideType.MinRange).Value("90").Height("10").Width("120").MinValue(50).MaxValue(100).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange").Slide("onchange"); }))
+                       </td></tr>
+<tr><td>
+                            Pointer Width </td>
+                      <td>      @(Html.EJ().Slider("pointerwidth").SliderType(SlideType.MinRange).Value("7").Height("10").Width("120").MinValue(2).MaxValue(14).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange").Slide("onchange"); }))
+</td></tr>
+                        <tr><td>    Needle Length </td>
+                                               <td>    @(Html.EJ().Slider("needlelength").SliderType(SlideType.MinRange).Value("19").Height("10").Width("120").MinValue(10).MaxValue(20).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange").Slide("onchange"); }))
+</td></tr>
+                         <tr><td>   Cap Radius </td>
+                    <td>         @(Html.EJ().Slider("pointercapradius").SliderType(SlideType.MinRange).Value("12").Height("10").Width("120").MinValue(9).MaxValue(15).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange").Slide("onchange"); }))
+</td></tr>
+                          <tr><td>  
+                              Pointer Value </td>
+                      <td>     @(Html.EJ().Slider("pointervalue").SliderType(SlideType.MinRange).Value("40").Height("10").Width("120").MinValue(0).MaxValue(120).EnableAnimation(true).ClientSideEvents(events => { events.Change("pointerchange"); }))
+                        </td></tr>
+                    <tr><td>        Needle Style </td>
+                     <td>        @(Html.EJ().DropDownList("needleStyle").Datasource((IEnumerable<NeedleStyle>)ViewBag.datasource1).DropDownListFields(df => df.ID("Style").Text("Style").Value("Style")).SelectedItemIndex(0).ClientSideEvents(cli => { cli.Select("onchange1"); }))
+</td></tr>
+ <script>
+     $(document).ready(function () {
+         //$("#sampleProperties").ejPropertiesPanel();
+     });
+     function onchange(args) {
+         circular = $("#circulargauge").data("ejCircularGauge");
+         if (args.id == "pointerlength") {
+             circular.setPointerLength(0, 0, args.value);
+         }
+         else if (args.id == "pointerwidth") {
+             circular.setPointerWidth(0, 0, args.value);
+         }
+         else if (args.id == "needlelength") {
+             circular.setBackNeedleLength(0, 0, args.value);
+         }
+         else if (args.id == "pointercapradius") {
+             circular.setPointerCapRadius(0, args.value);
+         }
+     }
+     function onchange1(args) {
+         circular = $("#circulargauge").data("ejCircularGauge");
+         circular.setNeedleStyle(0, 0, args.selectedText.toLowerCase());
+     }
+     function pointerchange(args) {
+         circular = $("#circulargauge").data("ejCircularGauge");
+         var _handleValue = Math.round(args.value);
+         circular.setPointerValue(0, 1, _handleValue);
+     }
+    </script>
+            <tr><td>
+                           Range Size </td>
+                                        <td>          @(Html.EJ().Slider("rangesize").SliderType(SlideType.MinRange).Value("7").Height("10").Width("120").MinValue(2).MinValue(12).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange3").Slide("onchange3"); })) </td></tr>
+                  <tr><td>          Range Distance  </td>
+                     <td>      @(Html.EJ().Slider("distancefromscale").SliderType(SlideType.MinRange).Value("-28").Height("10").Width("120").MinValue(-30).MinValue(0).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange3").Slide("onchange3"); }))
+</td></tr>
+                 <tr><td>           Pointer1 Value   </td>
+                      <td>     @(Html.EJ().Slider("pointer1value").SliderType(SlideType.MinRange).Value("60").Height("10").Width("120").MinValue(0).MinValue(120).EnableAnimation(true).ClientSideEvents(events => { events.Change("pointerchange1"); }))
+                        </td></tr>
+<tr><td>
+                            Select Range  </td>
+                     <td>       @(Html.EJ().DropDownList("rangeid").Datasource((IEnumerable<Ranges>)ViewBag.datasource2).DropDownListFields(df => df.ID("Range").Text("Range").Value("Range")).SelectedItemIndex(0).ClientSideEvents(cli => { cli.Select("onchange2"); }))
+</td></tr>
+                      <tr><td>      Start Value </td>
+                    <td>       @(Html.EJ().Slider("startvalue").SliderType(SlideType.MinRange).Value("0").Height("10").Width("120").MinValue(0).MinValue(50).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange3").Slide("onchange3"); }))
+                       </td></tr>
+                       <tr><td>     End Value </td>
+                      <td>     @(Html.EJ().Slider("endvalue").SliderType(SlideType.MinRange).Value("50").Height("10").Width("120").MinValue(0).MinValue(50).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange3").Slide("onchange3"); }))
+</td></tr>
+     <script>
+         $(document).ready(function () {
+             //$("#sampleProperties").ejPropertiesPanel();
+         });
+         function pointerchange1(args) {
+             pointerg = $("#circulargauge").data("ejCircularGauge");
+             var currentValue = pointerg.model.scales[0].pointers[0].value;
+             var _handleValue = Math.round(args.value);
+             timer = setInterval(function pointerchan() {
+                 if (currentValue < _handleValue) {
+                     currentValue = currentValue + 1;
+                     pointerg.setPointerValue(0, 0, currentValue);
+                 }
+                 else if (currentValue > _handleValue) {
+                     currentValue = currentValue - 1;
+                     pointerg.setPointerValue(0, 0, currentValue);
+                 }
+                 else if (currentValue == _handleValue) {
+                     window.clearInterval(timer);
+                 }
+             }, 1);
+         }
+         function onchange2(args) {
+             startslide = $("#startvalue").data("ejSlider");
+             endslide = $("#endvalue").data("ejSlider");
+             if (ej.isNullOrUndefined(startslide))
+                 return false;
+             gaugestart = $("#circulargauge").data("ejCircularGauge");
+             if (args.selectedText == "Range1") {
+                 startslide.model.startValue = -5;
+                 startslide.model.endValue = 50;
+                 startslide.setModel({ value: gaugestart.model.scales[0].ranges[0].startValue });
+                 endslide.model.startValue = 5; // startslide.model.end;
+                 endslide.model.endValue = startslide.model.endValue + 3; // 5;
+                 endslide.setModel({ value: gaugestart.model.scales[0].ranges[0].endValue });
+             }
+             else if (args.selectedText == "Range2") {
+                 startslide.model.startValue = 47;
+                 startslide.model.endValue = 100;
+                 startslide.setModel({ value: gaugestart.model.scales[0].ranges[1].startValue });
+                 endslide.model.startValue = 55; // startslide.model.end;
+                 endslide.model.endValue = startslide.model.endValue + 2; // 55;
+                 endslide.setModel({ value: gaugestart.model.scales[0].ranges[1].endValue });
+             }
+             else if (args.selectedText == "Range3") {
+                 startslide.model.startValue = 97;
+                 startslide.model.endValue = 120;
+                 startslide.setModel({ value: gaugestart.model.scales[0].ranges[2].startValue });
+                 endslide.model.startValue = 105; // startslide.model.end;
+                 endslide.model.endValue = startslide.model.endValue + 2; // 105;
+                 endslide.setModel({ value: gaugestart.model.scales[0].ranges[2].endValue });
+             }
+         }
+         function onchange3(args) {
+             rangetarget = $("#rangeid").data("ejDropDownList");
+             if (ej.isNullOrUndefined(rangetarget))
+                 return false;
+             target1 = $("#circulargauge").data("ejCircularGauge");
+             endslide = $("#endvalue").data("ejSlider");
+             startslide = $("#startvalue").data("ejSlider");
+             if (rangetarget.selectedTextValue == "Range1") {
+                 if (args.id == "startvalue") {
+                     target1.setRangeStartValue(0, 0, args.value);
+                     endslide.model.startValue = args.value //50;
+                     endslide.model.endValue = 50; // args.handleValue;
+                     endslide._initialize();
+                 }
+                 else if (args.id == "endvalue") {
+                     target1.setRangeEndValue(0, 0, args.value);
+                     startslide.model.startValue = 0;
+                     startslide.model.endValue = args.value;
+                     startslide._initialize();
+                 }
+             }
+             else if (rangetarget.selectedTextValue == "Range2") {
+                 if (args.id == "startvalue") {
+                     target1.setRangeStartValue(0, 1, args.value);
+                     endslide.model.startValue = args.value //100;
+                     endslide.model.endValue = 100; // args.handleValue;
+                     endslide._initialize();
+                 }
+                 else if (args.id == "endvalue") {
+                     target1.setRangeEndValue(0, 1, args.value);
+                     startslide.model.startValue = 50;
+                     startslide.model.endValue = args.value;
+                     startslide._initialize();
+                 }
+             }
+             else {
+                 if (args.id == "startvalue") {
+                     target1.setRangeStartValue(0, 2, args.value);
+                     endslide.model.startValue = args.value //120;
+                     endslide.model.endValue = 120; // args.handleValue;
+                     endslide._initialize();
+                 }
+                 else if (args.id == "endvalue") {
+                     target1.setRangeEndValue(0, 2, args.value);
+                     startslide.model.startValue = 100;
+                     startslide.model.endValue = args.value;
+                     startslide._initialize();
+                 }
+             }
+             if (args.id == "rangesize") {
+                 for (var i = 0; i <= 2; i++) {
+                     target1.setRangeSize(0, i, args.value);
+                 }
+             }
+             else if (args.id == "distancefromscale") {
+                 for (var i = 0; i <= 2; i++) {
+                     target1.setRangeDistanceFromScale(0, i, args.value);
+                 }
+             }
+         }
+    </script>
+               <tr><td>
+                            File Name </td>
+                         <td>   <input type="text" id="txtFileName" class="ejinputtext" style="width:100px"/></td></tr>
+                        <tr><td>    File Type </td>
+                        <td>    @(Html.EJ().DropDownList("ddlFileType").Datasource((IEnumerable<FileFormat>)ViewBag.datasource).DropDownListFields(df => df.ID("fileType").Text("fileType").Value("fileType")).SelectedItemIndex(1))
+</td></tr>
+         <tr><td>                     @(Html.EJ().Button("btnExportImage").Text("Export Image").ClientSideEvents(events => { events.Click("buttonclickevent"); }))
+</td></tr>
+     <script type="text/javascript">
+        $(document).ready(function () {
+            //$("#sampleProperties").ejPropertiesPanel();
+        });
+        $(function () {
+            $("#btnExportImage").ejButton({ width: "100px", click: "buttonclickevent", });
+        });
+        function buttonclickevent() {
+            var FileName = $("#txtFileName").val();
+            var FileFormat = $("#ddlFileType").val();
+            $("#circulargauge").ejCircularGauge("exportImage", FileName, FileFormat);
+        }
+    </script>
+</table>
+  @(Html.EJ().CircularGauge("circulargauge")
+                .BackgroundColor("transparent")
+                  .ReadOnly(false)
+                .Scales(SC =>
+                {
+                    SC.Radius(130)
+                    .PointerCap(cap => cap.Radius(10))
+                    .Minimum(0)
+                    .Maximum(120)
+                    .MajorIntervalValue(20)
+                    .MinorIntervalValue(10)
+                    .ShowScaleBar(true)
+                    .Size(1)
+                     .Labels(lbl => { lbl.UnitText("mpH").UnitTextPosition(UnitTextPlacement.Back).Add(); })
+                    .ShowRanges(true)
+                    .Ranges(ran =>
+                    {
+                        ran.Size(5).DistanceFromScale(-30).StartValue(0).EndValue(70).Add();
+                        ran.Size(5).DistanceFromScale(-30).StartValue(70).EndValue(110).BackgroundColor(ConsoleColor.Red.ToString()).Border(bor => bor.Color(ConsoleColor.Red.ToString())).Add();
+                        ran.Size(5).DistanceFromScale(-30).StartValue(110).EndValue(120).BackgroundColor(ConsoleColor.Yellow.ToString()).Border(bor => bor.Color(ConsoleColor.Yellow.ToString())).Add();
+                    })
+                    .CustomLabels(cl => { cl.Color("Red").Value("Speedometer").Position(loc => loc.X(255).Y(210)).Font(Fnt => { Fnt.FontFamily("Arial").FontStyle("Normal").Size("18px"); }).Add(); })
+                    .Pointers(PO =>
+                    {
+                        PO.Value(60)
+                        .Length(90)
+                        .Width(8)
+                        .ShowBackNeedle(true)
+                        .BackNeedleLength(15).Add();
+                        PO.Value(30)
+                        .Length(45)
+                        .Width(5)
+                        .ShowBackNeedle(false)
+                        .Add();
+                    }).Add();
+                })
+                .Radius(140)
+                .Height(360)
+                .Width(500))
+</table>
+</div>

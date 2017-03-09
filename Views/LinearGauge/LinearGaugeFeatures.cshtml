@@ -1,0 +1,319 @@
+﻿@{
+    ViewBag.Title = "LinearGauge";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using SFSample.Controllers.LinearGauge
+<h2>LinearGauge Features:</h2>
+<br/>
+<li> Scale</li>
+<li> Pointer</li>
+<li> Range</li>
+<li> Export Image</li>
+<li> Label Customization</li>
+<li> UserInteraction</li>
+<li> Multiple Scales</li>
+<li> Multiple Markpointers</li>
+<li> Multiple Barpointers</li>
+<li> Custom Labels</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+ <script src="@Url.Content("~/Scripts/excanvas.min.js")"></script>
+<div id = "ControlRegion"> 
+<div>
+<table>
+<table align="right" cellpadding="6" cellspacing="8" align="right" style="outline:solid" >
+                   <tr><td>
+                            Scalebar Size </td>
+                        <td>   @(Html.EJ().Slider("scalesize").SliderType(SlideType.MinRange).Value("7").Height("10").Width("110").MinValue(5).MaxValue(15).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange3").Slide("onchange3"); }))
+                        </td></tr>
+<tr><td>
+                            Scale Location X </td>
+                       <td>    @(Html.EJ().Slider("locationX").SliderType(SlideType.MinRange).Value("51").Height("10").Width("110").MinValue(48).MaxValue(53).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange3").Slide("onchange3"); }))
+                        </td></tr>
+                   <tr><td>
+                            Scale Location Y </td>
+                        <td>   @(Html.EJ().Slider("locationY").SliderType(SlideType.MinRange).Value("50").Height("10").Width("110").MinValue(40).MaxValue(55).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange3").Slide("onchange3"); }))
+                        </td></tr>
+<tr><td>
+                            Pointer Value
+                       </td>
+                        <td>    @(Html.EJ().Slider("pointervalue").SliderType(SlideType.MinRange).Value("50").Height("10").Width("110").MinValue(0).MaxValue(100).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange3").Slide("onchange3"); }))
+</td></tr>
+                         <tr><td>   Scale Orientation</td>
+                          <td>   @(Html.EJ().DropDownList("scaleOrientation").Datasource((IEnumerable<ScaleOrientation>)ViewBag.datasource5).DropDownListFields(df=>df.ID("OrientationType").Text("OrientationType").Value("OrientationType")).SelectedItemIndex(1).ClientSideEvents(cli => { cli.Select("onchange3"); }))
+                        </td>
+                        <td>    <input type="submit" id="Refresh" value="Refresh" style="display: none" />
+</td></tr>
+<script>
+     $(document).ready(function () {
+         //$("#sampleProperties").ejPropertiesPanel();
+     });
+         function onchange3(args) {
+             lineartarget = $("#CoreLinearGauge").data("ejLinearGauge");
+             if (args.id == "scalesize") {
+                 lineartarget.setScaleBarSize(0, args.value);
+             }
+             else if (args.id == "locationX") {
+                 lineartarget.setScaleLocation(0, { x: args.value, y: lineartarget.model.scales[0].position.y });
+             }
+             else if (args.id == "locationY") {
+                 lineartarget.setScaleLocation(0, { x: lineartarget.model.scales[0].position.x, y: args.value });
+             }
+             else if (args.id == "pointervalue") {
+                 lineartarget.setPointerValue(0, 0, args.value);
+                 lineartarget.setBarPointerValue(0, 0, args.value);
+             }
+             else if (args.selectedText == "Clockwise") {
+                 lineartarget.setScaleDirection(0, args.selectedText.toLowerCase());
+             }
+             else if (args.selectedText == "CounterClockwise") {
+                 lineartarget.setScaleDirection(0, args.selectedText.toLowerCase());
+             }
+         }
+    </script>
+                    <tr><td>
+                            Pointer Width
+                       </td>
+                        <td>   @(Html.EJ().Slider("pointerwidth").SliderType(SlideType.MinRange).Value("15").Height("10").Width("110").MinValue(10).MaxValue(25).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange").Slide("onchange"); }))
+                       </td></tr>
+                    <tr><td>
+                            Placement</td>
+                       <td>     @(Html.EJ().DropDownList("pointerplacement").Datasource((IEnumerable<PointerPlacementl>)ViewBag.datasource1).DropDownListFields(df=>df.ID("Placement").Text("Placement").Value("Placement")).SelectedItemIndex(0).ClientSideEvents(cli => { cli.Select("onchange"); }))
+                       </td></tr>
+<tr><td>
+                            Marker Style
+                       </td>
+<td>
+                           @(Html.EJ().DropDownList("markerstyle").Datasource((IEnumerable<MarkerStyle>)ViewBag.datasource2).DropDownListFields(df=>df.ID("markerStyle").Text("markerStyle").Value("markerStyle")).SelectedItemIndex(0).ClientSideEvents(cli => { cli.Select("onchange"); }))
+</td></tr>
+<script>
+    $(document).ready(function () {
+        //$("#sampleProperties").ejPropertiesPanel();
+    });
+        function onchange(args) {
+            linearpointer = $("#CoreLinearGauge").data("ejLinearGauge");
+            if (args.id == "pointerwidth") {
+                linearpointer.setPointerWidth(0, 0, args.value);
+            }
+            else if (args.id == "pointervalue") {
+                linearpointer.setPointerValue(0, 0, args.value);
+                linearpointer.setBarPointerValue(0, 0, args.value);
+            }
+            else if (args.selectedText == "Far" || args.selectedText == "Near" || args.selectedText == "Center") {
+                linearpointer.setPointerPlacement(0, 0, args.selectedText.toLowerCase());
+            }
+            else if (args.selectedText == "Diamond" || args.selectedText == "Rectangle" || args.selectedText == "Triangle" || args.selectedText == "Ellipse" || args.selectedText == "Pentagon" || args.selectedText == "Circle" || args.selectedText == "Star" || args.selectedText == "Slider" || args.selectedText == "Pointer" || args.selectedText == "Wedge" || args.selectedText == "Trapezoid" || args.selectedText == "Rounded Rect") {
+                if (args.selectedText == "Rounded Rect")
+                    linearpointer.setMarkerStyle(0, 0, "roundedrectangle");
+                else
+                    linearpointer.setMarkerStyle(0, 0, args.selectedText.toLowerCase());
+            }
+        }
+    </script>
+                    <tr><td>
+                            Select Range </td>
+                       <td>
+                            @(Html.EJ().DropDownList("rangeid").Datasource((IEnumerable<GaugeRange>)ViewBag.datasource3).DropDownListFields(df=>df.ID("Gaugerange").Text("Gaugerange").Value("Gaugerange")).SelectedItemIndex(0).ClientSideEvents(cli => { cli.Select("onchange1"); }))
+                        </td></tr>
+<tr><td>
+                            Start Width
+                        </td>
+                        <td>   @(Html.EJ().Slider("startwidth").SliderType(SlideType.MinRange).Height("10").Width("110").EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange2").Slide("onchange2"); }))
+                       </td></tr>
+<tr><td>
+                            End Width </td>
+                                           <td>      @(Html.EJ().Slider("endwidth").SliderType(SlideType.MinRange).Height("10").Width("110").EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange2").Slide("onchange2"); }))
+                      </td></tr>
+<tr><td>
+                            Start Value </td>
+                        <td>   @(Html.EJ().Slider("startvalue").SliderType(SlideType.MinRange).Height("10").Width("110").EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange2").Slide("onchange2"); }))
+                       </td></tr>
+<tr><td>
+                            End Value </td>
+                        <td>   @(Html.EJ().Slider("endValue").SliderType(SlideType.MinRange).Height("10").Width("110").EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange2").Slide("onchange2"); }))
+                      </td></tr>
+          <tr><td>          
+                            Placement
+                  </td>      
+                       <td>     @(Html.EJ().DropDownList("rangeplacement").Datasource((IEnumerable<PointerPlacementr>)ViewBag.datasource4).DropDownListFields(df=>df.ID("Placementr").Text("Placementr").Value("Placementr")).SelectedItemIndex(0).ClientSideEvents(cli => { cli.Select("onchange2"); }))
+                       </td>
+                       <td>     <input type="submit" id="Refresh" value="Refresh" style="display: none" /> </td></tr>
+  <script>
+      $(document).ready(function () {
+          //$("#sampleProperties").ejPropertiesPanel();
+         // placement = $("#rangeplacement").data("ejDropDownList");
+         // placement.selectItemByIndex(0);
+         // rangeid = $("#rangeid").data("ejDropDownList");
+          //rangeid.selectItemByIndex(0);
+         });
+      function onchange1(args) {
+             startslide = $("#startValue").data("ejSlider");
+             endslide = $("#endValue").data("ejSlider");
+             if (ej.isNullOrUndefined(startslide))
+                 return false;
+             startwidth = $("#startwidth").data("ejSlider");
+             endwidth = $("#endwidth").data("ejSlider");
+             gaugestart = $("#CoreLinearGauge").data("ejLinearGauge");
+             if (args.selectedText == "Range1") {
+                 startwidth.model.startValue = -5;
+                 startwidth.model.endValue = 20;
+                 startwidth.setModel({ value: gaugestart.model.scales[0].ranges[0].startWidth });
+                 endwidth.model.startValue = 0;
+                 endwidth.model.endValue = 20;
+                 endwidth.setModel({ value: gaugestart.model.scales[0].ranges[0].endWidth });
+                 startslide.model.startValue = -5;
+                 startslide.model.endValue = 50;
+                 startslide.setModel({ value: gaugestart.model.scales[0].ranges[0].startValue });
+                 endslide.model.startValue = 5;
+                 endslide.model.endValue = startslide.model.endValue + 3;
+                 endslide.setModel({ value: gaugestart.model.scales[0].ranges[0].endValue });
+             }
+             else if (args.selectedText == "Range2") {
+                 startwidth.model.startValue = 0;
+                 startwidth.model.endValue = 20;
+                 startwidth.setModel({ value: gaugestart.model.scales[0].ranges[1].startWidth });
+                 endwidth.model.startValue = -5;
+                 endwidth.model.endValue = 20;
+                 endwidth.setModel({ value: gaugestart.model.scales[0].ranges[1].endWidth });
+                 startslide.model.startValue = 67;
+                 startslide.model.endValue = 100;
+                 startslide.setModel({ value: gaugestart.model.scales[0].ranges[1].startValue });
+                 endslide.model.startValue = 75;
+                 endslide.model.endValue = startslide.model.endValue + 3;
+                 endslide.setModel({ value: gaugestart.model.scales[0].ranges[1].endValue });
+             }
+         }
+      function onchange2(args) {
+             gaugetarget = $("#CoreLinearGauge").data("ejLinearGauge");
+             target1 = $("#rangeid").data("ejDropDownList");
+             if (ej.isNullOrUndefined(target1))
+                 return false;
+             endslide = $("#endValue").data("ejSlider");
+             endwidth = $("#endwidth").data("ejSlider");
+             startslide = $("#startvalue").data("ejSlider");
+             if (target1.selectedTextValue == "Range1") {
+                 if (args.id == "startwidth") {
+                     if (args.value >= 0)
+                         gaugetarget.setRangeStartWidth(0, 0, args.value);
+                 }
+                 else if (args.id == "endwidth") {
+                     gaugetarget.setRangeEndWidth(0, 0, args.value);
+                 }
+                 else if (args.id == "startvalue") {
+                     gaugetarget.setRangeStartValue(0, 0, args.value);
+                     endslide.model.startValue = args.value
+                     endslide.model.endValue = 50;
+                     endslide._initialize();
+                 }
+                 else if (args.id == "endValue") {
+                     gaugetarget.setRangeEndValue(0, 0, args.value);
+                     startslide.model.startValue = 0;
+                     startslide.model.endValue = args.value;
+                     startslide._initialize();
+                 }
+             }
+             else if (target1.selectedTextValue == "Range2") {
+                 if (args.id == "startwidth") {
+                     gaugetarget.setRangeStartWidth(0, 1, args.value);
+                 }
+                 else if (args.id == "endwidth") {
+                     if (args.value >= 0)
+                         gaugetarget.setRangeEndWidth(0, 1, args.value);
+                 }
+                 else if (args.id == "startvalue") {
+                     gaugetarget.setRangeStartValue(0, 1, args.value);
+                     endslide.model.startValue = args.value;
+                     endslide.model.endValue = 100;
+                     endslide._initialize();
+                 }
+                 else if (args.id == "endValue") {
+                     gaugetarget.setRangeEndValue(0, 1, args.value);
+                     startslide.model.startValue = 70;
+                     startslide.model.endValue = args.value;
+                     startslide._initialize();
+                 }
+             }
+             if (args.id == "pointervalue") {
+                 gaugetarget.setBarPointerValue(0, 0, args.value);
+             }
+             if (args.selectedText == "Far" || args.selectedText == "Near" || args.selectedText == "Center") {
+                 gaugetarget.setRangePosition(0, 0, args.selectedText.toLowerCase());
+                 gaugetarget.setRangePosition(0, 1, args.selectedText.toLowerCase());
+             }
+         }
+    </script>
+                        <tr> <td>
+                            File Name </td>
+                        <td>
+                            <input type="text" id="txtFileName" class="ejinputtext" style="width:100px"/>
+                   </td>     </tr>
+                        <tr><td>
+                            File Type
+                      </td>
+                       <td>    @(Html.EJ().DropDownList("ddlFileType").Datasource((IEnumerable<FileFormat>)ViewBag.datasource).DropDownListFields(df => df.ID("fileType").Text("fileType").Value("fileType")).SelectedItemIndex(0))
+                       </td></tr>
+     <tr><td>
+                              @(Html.EJ().Button("btnExportImage").Text("Export").ClientSideEvents(events => { events.Click("buttonclickevent"); }))</td>
+</tr>
+  <script type="text/javascript">
+        $(document).ready(function () {
+           // $("#sampleProperties").ejPropertiesPanel();
+        });
+        $(function () {
+            $("#btnExportImage").ejButton({ width: "100px", click: "buttonclickevent", });
+        });
+        function buttonclickevent() {
+            var FileName = $("#txtFileName").val();
+            var FileFormat = $("#ddlFileType").val();
+            $("#CoreLinearGauge").ejLinearGauge("exportImage", FileName, FileFormat);
+        }
+    </script>
+</table>
+ @(Html.EJ().LinearGauge("CoreLinearGauge").LabelColor("#8c8c8c").Width(500)
+                 .ReadOnly(false)    
+		 .Scales(s =>
+                    {
+                        s.Width(4)
+                         .Border(bor => bor.Color("transparent").Width(0)).MinorIntervalValue(5)
+                          .ShowCustomLabels(true)
+                         .ShowBarPointers(true)
+                         .ShowRanges(true)
+                         .ShowMarkerPointers(true)
+                         .Length(310)
+                         .Position(loc => { loc.X(53).Y(50); })
+                       .MarkerPointers(mp => { mp.Value(50).Length(10).MarkerDistanceFromScale(8).Width(10).MarkerBackgroundColor("#4D4D4D").Border(bor => bor.Color("transparent").Width(0)).Add(); 
+                        mp.Value(70).Length(10).Width(10).MarkerBackgroundColor("#4D4D4D").Border(bor=>bor.Color("4D4D4D")).Add();
+                          })
+                         .Labels(lbl => { lbl.UnitText("F").UnitTextPlacement(UnitTextPlacement.Back).Font(fnt => { fnt.Size("11px").FontFamily("Segoe UI").FontStyle("Bold"); }).DistanceFromScale(dfs=>dfs.X(-13)).UnitText("F").Add(); })
+                          .BarPointers(barptr => { barptr.BarPointerValue(97).Width(4).BarPointerDistanceFromScale(8).BarPointerBackgroundColor("#6FAAB0").Add();
+                         barptr.BarPointerValue(50).Width(4).BarPointerDistanceFromScale(-8).BarPointerBackgroundColor("#6FAAB0").Add(); 
+                          })
+                         .Ticks(tic => { tic.Type(TickType.MajorInterval).Width(1).Color("#8c8c8c").Add(); })
+                            .Ranges(rng =>
+                            {
+                                rng.EndValue(60).StartValue(0).RangeBackgroundColor("#F6B53F").Border(bor=>bor.Color("Red")).StartWidth(4).EndWidth(4).Add();
+                                rng.EndValue(100).StartValue(60).RangeBackgroundColor("#E94649").Border(bor=>bor.Color("Green")).StartWidth(4).EndWidth(4).Add();
+                            })
+                         .CustomLabels(clbl=>{clbl.Value("Thermometer").Position(loc => loc.X(49).Y(100)).Font(f => { f.FontStyle("Bold").FontFamily("Segoe UI").Size("20px"); }).Color("Red").Add();})
+                         .Add();
+         s.Width(2).Maximum(40).Minimum(34).MinorIntervalValue(1).MajorIntervalValue(1)
+                         .BackgroundColor("transparent").ShowRanges(true)
+                         .Border(bor=>bor.Color("transparent"))
+                         .ShowRanges(true)
+                         .Length(310).ShowTicks(false)
+                         .Width(0)
+                         .Position(loc => { loc.X(55).Y(50); })
+                         .MarkerPointers(mp => { mp.MarkerOpacity(0).Add(); })
+                         .Labels(lbl => { lbl.UnitText("F").UnitTextPlacement(UnitTextPlacement.Back).Font(fnt => { fnt.Size("11px").FontFamily("Segoe UI").FontStyle("Bold"); }).DistanceFromScale(dfs=>dfs.X(29)).UnitText("C").Add(); })
+                         .BarPointers(barptr => { barptr.BarPointerOpacity(0).Add(); })
+                         .Ticks(tic => { tic.Type(TickType.MajorInterval).Width(1).Color("#8c8c8c").Add(); })
+                          .Ranges(rng =>
+                          {
+                              rng.EndValue(35).StartValue(34).RangeBackgroundColor("Red").Border(bor=>bor.Color("Red")).StartWidth(4).EndWidth(4).Add();
+                              rng.EndValue(37).StartValue(35).RangeBackgroundColor("Green").Border(bor=>bor.Color("Green")).StartWidth(4).EndWidth(4).Add();
+                              rng.EndValue(40).StartValue(37).RangeBackgroundColor("Red").Border(bor=>bor.Color("Red")).StartWidth(4).EndWidth(4).Add();
+                          })
+                         .Add();
+                     }))
+</table>
+</div>

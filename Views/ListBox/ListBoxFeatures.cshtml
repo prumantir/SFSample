@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "ListBox";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>ListBox Features:</h2>
+<br/>
+<li> Default</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+       <div class="frame ">
+         <div class="control">
+           <div class="ctrllabel">
+                Select a car</div>
+            @Html.EJ().ListBox("list1").TargetID("carsList").ShowCheckbox(true)
+                <ul id="carsList">
+                    <li>Audi A4</li>
+                    <li>Audi A5</li>
+                    <li>Audi A6</li>
+                    <li>Audi A7</li>
+                    <li>Audi A8</li>
+                    <li>BMW 501</li>
+                    <li>BMW 502</li>
+                    <li>BMW 503</li>
+                    <li>BMW 507</li>
+                    <li>BMW 3200</li>
+                </ul>
+        </div>
+         </div>
+       </div>    
+       <style>
+         .frame .control {
+            margin-left: 100px;
+         }     
+        .ctrllabel
+        {
+            padding-top: 15px;
+        }    
+       </style>
+</div>

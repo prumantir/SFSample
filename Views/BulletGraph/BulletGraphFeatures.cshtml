@@ -1,0 +1,590 @@
+﻿@{
+    ViewBag.Title = "BulletGraph";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ @using SFSample.Controllers.BulletGraph
+ <h2>BulletGraph Features:</h2>
+<br/>
+<li> MultiMeasurement</li>
+<li> RemoteData</li>
+<li> Range Customization</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+<table>
+<table align="right" cellpadding="5" style="outline:solid"  >
+            <tr>
+            <td>    Range Stroke to Ticks</td>
+                         <td>    @Html.EJ().CheckBox("chkStrokeToTicks").ClientSideEvents(client => { client.Change("onTickStroke"); })
+                        </td></tr>
+                        <tr><td>
+                            Range Stroke to Labels</td>
+                        <td>
+                             @Html.EJ().CheckBox("chkStrokeToLabels").ClientSideEvents(client => { client.Change("onLabelStroke"); })
+                        </td></tr>
+                        <tr><td>     Enable Animation
+                        </td>
+                         <td>    @Html.EJ().CheckBox("chkEnableAnimation").ClientSideEvents(client => { client.Change("onAnimateClick"); })
+                    </td>   </tr>
+                        <tr><td>
+                            Featured Measure </td>
+                        <td>
+                            @Html.EJ().Slider("featureMeasureValue").SliderType(SlideType.MinRange).Value("1").Height("10").Width("120").MinValue(0).MaxValue(10).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange").Slide("onchange"); })
+                     </td>   </tr>
+                   <tr><td>
+                            Comparative Measure</td>
+                        <td>
+                           @Html.EJ().Slider("comparativeMeasureValue").SliderType(SlideType.MinRange).Value("1").Height("10").Width("120").MinValue(0).MaxValue(10).EnableAnimation(true).ClientSideEvents(events => { events.Change("onchange").Slide("onchange"); })
+                        </td></tr>
+                        <tr><td>
+                            Range1 Stroke</td>
+                        <td>
+                            @Html.EJ().DropDownList("range1Stroke").Datasource((IEnumerable<BulletGraphProperties>)ViewBag.datasourceStroke).DropDownListFields(df => df.ID("RangeStroke").Text("RangeStroke").Value("RangeStroke")).SelectedItemIndex(0).ClientSideEvents(cli => { cli.Select("onchange"); })
+                        </td></tr>
+                   <tr><td>
+                            Range2 Stroke </td>
+                  <td>
+                              @Html.EJ().DropDownList("range2Stroke").Datasource((IEnumerable<BulletGraphProperties>)ViewBag.datasourceStroke).DropDownListFields(df => df.ID("RangeStroke").Text("RangeStroke").Value("RangeStroke")).SelectedItemIndex(0).ClientSideEvents(cli => { cli.Select("onchange"); })
+                        </td></tr>
+                        <tr><td>
+                            Range3 Stroke </td>
+                     <td>
+                            @Html.EJ().DropDownList("range3Stroke").Datasource((IEnumerable<BulletGraphProperties>)ViewBag.datasourceStroke).DropDownListFields(df => df.ID("RangeStroke").Text("RangeStroke").Value("RangeStroke")).SelectedItemIndex(0).ClientSideEvents(cli => { cli.Select("onchange"); })
+                    </td></tr>
+                    <tr><td>
+                            Orientation</td>
+                         <td>    @Html.EJ().DropDownList("orientation").Datasource((IEnumerable<BulletGraphProperties>)ViewBag.datasourceOrientation).DropDownListFields(df => df.ID("Orientation").Text("Orientation").Value("Orientation")).SelectedItemIndex(0).ClientSideEvents(cli => { cli.Select("onchange"); })
+                       </td></tr>
+       <tr><td>                          Flow Direction</td>  
+                       <td>     @Html.EJ().DropDownList("flowDirection").Datasource((IEnumerable<BulletGraphProperties>)ViewBag.datasourceDirection).DropDownListFields(df => df.ID("Direction").Text("Direction").Value("Direction")).SelectedItemIndex(0).ClientSideEvents(cli => { cli.Select("onchange"); })
+                       </td></tr>
+                         <tr><td>   MajorTick Stroke</td>
+                           <td>  @Html.EJ().DropDownList("majorTickStroke").Datasource((IEnumerable<BulletGraphProperties>)ViewBag.datasourceStroke).DropDownListFields(df => df.ID("RangeStroke").Text("RangeStroke").Value("RangeStroke")).SelectedItemIndex(0).ClientSideEvents(cli => { cli.Select("onchange"); })
+                       </td></tr>
+                        <tr><td>       MinorTick Stroke</td>
+                          <td>  @Html.EJ().DropDownList("minorTickStroke").Datasource((IEnumerable<BulletGraphProperties>)ViewBag.datasourceStroke).DropDownListFields(df => df.ID("RangeStroke").Text("RangeStroke").Value("RangeStroke")).SelectedItemIndex(0).ClientSideEvents(cli => { cli.Select("onchange"); })
+                        </td></tr>
+                    <tr><td>     FeatureMeasure Stroke </td>
+                           <td>   @Html.EJ().DropDownList("featureMeasureStroke").Datasource((IEnumerable<BulletGraphProperties>)ViewBag.datasourceStroke).DropDownListFields(df => df.ID("RangeStroke").Text("RangeStroke").Value("RangeStroke")).SelectedItemIndex(0).ClientSideEvents(cli => { cli.Select("onchange"); })
+                       </td></tr>
+                      <tr><td>         Comparative Symbol Stroke</td>
+                          <td>  @Html.EJ().DropDownList("comparativeSymbolStroke").Datasource((IEnumerable<BulletGraphProperties>)ViewBag.datasourceStroke).DropDownListFields(df => df.ID("RangeStroke").Text("RangeStroke").Value("RangeStroke")).SelectedItemIndex(0).ClientSideEvents(cli => { cli.Select("onchange"); })
+                        </td></tr>
+   <script type="text/javascript">
+       $(document).ready(function () {
+           //$("#sampleProperties").ejPropertiesPanel();
+       });
+       function onTickStroke(args) {
+           if (args.isChecked) {
+               $("#Bulletr").ejBulletGraph("option", "applyRangeStrokeToTicks", true);
+               $("#Bulletd").ejBulletGraph("option", "applyRangeStrokeToTicks", true);
+               $("#Bulletm").ejBulletGraph("option", "applyRangeStrokeToTicks", true);
+               $("#Bullets").ejBulletGraph("option", "applyRangeStrokeToTicks", true);
+           }
+           else {
+               $("#Bulletr").ejBulletGraph("option", "applyRangeStrokeToTicks", false);
+               $("#Bulletd").ejBulletGraph("option", "applyRangeStrokeToTicks", false);
+               $("#Bulletm").ejBulletGraph("option", "applyRangeStrokeToTicks", false);
+               $("#Bullets").ejBulletGraph("option", "applyRangeStrokeToTicks", false);
+           }
+       }
+       function onLabelStroke(args) {
+           if (args.isChecked) {
+               $("#Bulletr").ejBulletGraph("option", "applyRangeStrokeToLabels", true);
+               $("#Bulletd").ejBulletGraph("option", "applyRangeStrokeToLabels", true);
+               $("#Bulletm").ejBulletGraph("option", "applyRangeStrokeToLabels", true);
+               $("#Bullets").ejBulletGraph("option", "applyRangeStrokeToLabels", true);
+           }
+           else {
+               $("#Bulletr").ejBulletGraph("option", "applyRangeStrokeToLabels", false);
+               $("#Bulletd").ejBulletGraph("option", "applyRangeStrokeToLabels", false);
+               $("#Bulletm").ejBulletGraph("option", "applyRangeStrokeToLabels", false);
+               $("#Bullets").ejBulletGraph("option", "applyRangeStrokeToLabels", false);
+           }
+       }
+       function onAnimateClick(args) {
+           if (args.isChecked) {
+               $("#Bulletr").ejBulletGraph("option", "enableAnimation", true);
+               $("#Bulletd").ejBulletGraph("option", "enableAnimation", true);
+               $("#Bulletm").ejBulletGraph("option", "enableAnimation", true);
+               $("#Bullets").ejBulletGraph("option", "enableAnimation", true);
+           }
+           else {
+               $("#Bulletr").ejBulletGraph("option", "enableAnimation", false);
+               $("#Bulletd").ejBulletGraph("option", "enableAnimation", false);
+               $("#Bulletm").ejBulletGraph("option", "enableAnimation", false);
+               $("#Bullets").ejBulletGraph("option", "enableAnimation", false);
+           }
+       }
+       function onchange(args) {
+               bulletValues = $("#Bullets").data("ejBulletGraph")
+               if (this._id == "featureMeasureValue") {
+                   var dat = $("#Bullets").data("ejBulletGraph");
+                   if (dat) {
+                       if (args.id == "featureMeasureValue")
+                           dat.setFeatureMeasureBarValue(0, args.value);
+                       else if (args.id == "comparativeMeasureValue")
+                           dat.setComparativeMeasureSymbol(0, args.value);
+                   }
+               }
+               else if (this._id == "comparativeMeasureValue") {
+                   var dat = $("#Bullets").data("ejBulletGraph");
+                   if (dat) {
+                       if (args.id == "featureMeasureValue")
+                           dat.setFeatureMeasureBarValue(0, args.value);
+                       else if (args.id == "comparativeMeasureValue")
+                           dat.setComparativeMeasureSymbol(0, args.value);
+                   }
+               }
+               if (this._id == "range1Stroke") {
+                   if (args.itemId != 0)
+                       $("#Bullets").ejBulletGraph("option", "qualitativeRanges", [{ rangeStroke: args.value }]);
+               }
+               else if (this._id == "range2Stroke") {
+                   if (args.itemId != 0)
+                       $("#Bullets").ejBulletGraph("option", "qualitativeRanges", [{}, { rangeStroke: args.value }]);
+               }
+               else if (this._id == "range3Stroke") {
+                   if (args.itemId != 0)
+                       $("#Bullets").ejBulletGraph("option", "qualitativeRanges", [{}, {}, { rangeStroke: args.value }]);
+               }
+               else if (this._id == "orientation") {
+                   if (args.itemId != 0) {
+                       var dat = $("#Bullets").data("ejBulletGraph");
+                       if (dat) {
+                           $("#Bullets").ejBulletGraph("option", "orientation", args.value);
+                           if (args.value == "vertical") {
+                               $("#Bullets").ejBulletGraph("option", "height", 540);
+                               $("#Bullets").ejBulletGraph("option", "width", 140);
+                               $("#Bullets").ejBulletGraph("option", "quantitativeScale", { location: { x: 10, y: 10 } });
+                               $("#Bullets").ejBulletGraph("option", "caption", { textAngle: 90, location: { x: -17, y: 2 }, subtitle: { textAngle: 90, location: { x: -20, y: 15 } } });
+                           }
+                           else {
+                               $("#Bullets").ejBulletGraph("option", "height", 90);
+                               $("#Bullets").ejBulletGraph("option", "width", 595);
+                               $("#Bullets").ejBulletGraph("option", "quantitativeScale", { location: { x: 110, y: 10 } });
+                               $("#Bullets").ejBulletGraph("option", "caption", { textAngle: 0, location: { x: 17, y: 30 }, subtitle: { textAngle: 0, location: { x: 10, y: 45 } } });
+                           }
+                       }
+                   }
+               }
+               else if (this._id == "flowDirection") {
+                   if (args.itemId != 0) {
+                       var dat = $("#Bullets").data("ejBulletGraph");
+                       if (dat)
+                           $("#Bullets").ejBulletGraph("option", "flowDirection", args.value);
+                   }
+               }
+               else if (this._id == "majorTickStroke") {
+                   if (args.itemId != 0)
+                       $("#Bullets").ejBulletGraph("option", "quantitativeScaleSettings", { majorTickSettings: { stroke: args.value } });
+               }
+               else if (this._id == "minorTickStroke") {
+                   if (args.itemId != 0)
+                       $("#Bullets").ejBulletGraph("option", "quantitativeScaleSettings", { minorTickSettings: { stroke: args.value } });
+               }
+               else if (this._id == "featureMeasureStroke") {
+                   if (args.itemId != 0)
+                       $("#Bullets").ejBulletGraph("option", "quantitativeScaleSettings", { featuredMeasureSettings: { stroke: args.value } });
+               }
+               else if (this._id == "comparativeSymbolStroke") {
+                   if (args.itemId != 0)
+                       $("#Bullets").ejBulletGraph("option", "quantitativeScaleSettings", { comparativeMeasureSettings: { stroke: args.value } });
+               }
+           bulletValue = $("#Bulletr").data("ejBulletGraph")
+           if (this._id == "featureMeasureValue") {
+               var dat = $("#Bulletr").data("ejBulletGraph");
+               if (dat) {
+                   if (args.id == "featureMeasureValue")
+                       dat.setFeatureMeasureBarValue(0, args.value);
+                   else if (args.id == "comparativeMeasureValue")
+                       dat.setComparativeMeasureSymbol(0, args.value);
+               }
+           }
+           else if (this._id == "comparativeMeasureValue") {
+               var dat = $("#Bulletr").data("ejBulletGraph");
+               if (dat) {
+                   if (args.id == "featureMeasureValue")
+                       dat.setFeatureMeasureBarValue(0, args.value);
+                   else if (args.id == "comparativeMeasureValue")
+                       dat.setComparativeMeasureSymbol(0, args.value);
+               }
+           }
+           if (this._id == "range1Stroke") {
+               if (args.itemId != 0)
+                   $("#Bulletr").ejBulletGraph("option", "qualitativeRanges", [{ rangeStroke: args.value }]);
+           }
+           else if (this._id == "range2Stroke") {
+               if (args.itemId != 0)
+                   $("#Bulletr").ejBulletGraph("option", "qualitativeRanges", [{}, { rangeStroke: args.value }]);
+           }
+           else if (this._id == "range3Stroke") {
+               if (args.itemId != 0)
+                   $("#Bulletr").ejBulletGraph("option", "qualitativeRanges", [{}, {}, { rangeStroke: args.value }]);
+           }
+           else if (this._id == "orientation") {
+               if (args.itemId != 0) {
+                   var dat = $("#Bulletr").data("ejBulletGraph");
+                   if (dat) {
+                       $("#Bulletr").ejBulletGraph("option", "orientation", args.value);
+                       if (args.value == "vertical") {
+                           $("#Bulletr").ejBulletGraph("option", "height", 540);
+                           $("#Bulletr").ejBulletGraph("option", "width", 140);
+                           $("#Bulletr").ejBulletGraph("option", "quantitativeScale", { location: { x: 10, y: 10 } });
+                           $("#Bulletr").ejBulletGraph("option", "caption", { textAngle: 90, location: { x: -17, y: 2 }, subtitle: { textAngle: 90, location: { x: -20, y: 15 } } });
+                       }
+                       else {
+                           $("#Bulletr").ejBulletGraph("option", "height", 90);
+                           $("#Bulletr").ejBulletGraph("option", "width", 595);
+                           $("#Bulletr").ejBulletGraph("option", "quantitativeScale", { location: { x: 110, y: 10 } });
+                           $("#Bulletr").ejBulletGraph("option", "caption", { textAngle: 0, location: { x: 17, y: 30 }, subtitle: { textAngle: 0, location: { x: 10, y: 45 } } });
+                       }
+                   }
+               }
+           }
+           else if (this._id == "flowDirection") {
+               if (args.itemId != 0) {
+                   var dat = $("#Bulletr").data("ejBulletGraph");
+                   if (dat)
+                       $("#Bulletr").ejBulletGraph("option", "flowDirection", args.value);
+               }
+           }
+           else if (this._id == "majorTickStroke") {
+               if (args.itemId != 0)
+                   $("#Bulletr").ejBulletGraph("option", "quantitativeScaleSettings", { majorTickSettings: { stroke: args.value } });
+           }
+           else if (this._id == "minorTickStroke") {
+               if (args.itemId != 0)
+                   $("#Bulletr").ejBulletGraph("option", "quantitativeScaleSettings", { minorTickSettings: { stroke: args.value } });
+           }
+           else if (this._id == "featureMeasureStroke") {
+               if (args.itemId != 0)
+                   $("#Bulletr").ejBulletGraph("option", "quantitativeScaleSettings", { featuredMeasureSettings: { stroke: args.value } });
+           }
+           else if (this._id == "comparativeSymbolStroke") {
+               if (args.itemId != 0)
+                   $("#Bulletr").ejBulletGraph("option", "quantitativeScaleSettings", { comparativeMeasureSettings: { stroke: args.value } });
+           }
+               bulletValue1 = $("#Bulletd").data("ejBulletGraph")
+               if (this._id == "featureMeasureValue") {
+                   var dat = $("#Bulletd").data("ejBulletGraph");
+                   if (dat) {
+                       if (args.id == "featureMeasureValue")
+                           dat.setFeatureMeasureBarValue(0, args.value);
+                       else if (args.id == "comparativeMeasureValue")
+                           dat.setComparativeMeasureSymbol(0, args.value);
+                   }
+               }
+               else if (this._id == "comparativeMeasureValue") {
+                   var dat = $("#Bulletd").data("ejBulletGraph");
+                   if (dat) {
+                       if (args.id == "featureMeasureValue")
+                           dat.setFeatureMeasureBarValue(0, args.value);
+                       else if (args.id == "comparativeMeasureValue")
+                           dat.setComparativeMeasureSymbol(0, args.value);
+                   }
+               }
+               if (this._id == "range1Stroke") {
+                   if (args.itemId != 0)
+                       $("#Bulletd").ejBulletGraph("option", "qualitativeRanges", [{ rangeStroke: args.value }]);
+               }
+               else if (this._id == "range2Stroke") {
+                   if (args.itemId != 0)
+                       $("#Bulletd").ejBulletGraph("option", "qualitativeRanges", [{}, { rangeStroke: args.value }]);
+               }
+               else if (this._id == "range3Stroke") {
+                   if (args.itemId != 0)
+                       $("#Bulletd").ejBulletGraph("option", "qualitativeRanges", [{}, {}, { rangeStroke: args.value }]);
+               }
+               else if (this._id == "orientation") {
+                   if (args.itemId != 0) {
+                       var dat = $("#Bulletd").data("ejBulletGraph");
+                       if (dat) {
+                           $("#Bulletd").ejBulletGraph("option", "orientation", args.value);
+                           if (args.value == "vertical") {
+                               $("#Bulletd").ejBulletGraph("option", "height", 540);
+                               $("#Bulletd").ejBulletGraph("option", "width", 140);
+                               $("#Bulletd").ejBulletGraph("option", "quantitativeScale", { location: { x: 10, y: 10 } });
+                               $("#Bulletd").ejBulletGraph("option", "caption", { textAngle: 90, location: { x: -17, y: 2 }, subtitle: { textAngle: 90, location: { x: -20, y: 15 } } });
+                           }
+                           else {
+                               $("#Bulletd").ejBulletGraph("option", "height", 90);
+                               $("#Bulletd").ejBulletGraph("option", "width", 595);
+                               $("#Bulletd").ejBulletGraph("option", "quantitativeScale", { location: { x: 110, y: 10 } });
+                               $("#Bulletd").ejBulletGraph("option", "caption", { textAngle: 0, location: { x: 17, y: 30 }, subtitle: { textAngle: 0, location: { x: 10, y: 45 } } });
+                           }
+                       }
+                   }
+               }
+               else if (this._id == "flowDirection") {
+                   if (args.itemId != 0) {
+                       var dat = $("#Bulletd").data("ejBulletGraph");
+                       if (dat)
+                           $("#Bulletd").ejBulletGraph("option", "flowDirection", args.value);
+                   }
+               }
+               else if (this._id == "majorTickStroke") {
+                   if (args.itemId != 0)
+                       $("#Bulletd").ejBulletGraph("option", "quantitativeScaleSettings", { majorTickSettings: { stroke: args.value } });
+               }
+               else if (this._id == "minorTickStroke") {
+                   if (args.itemId != 0)
+                       $("#Bulletd").ejBulletGraph("option", "quantitativeScaleSettings", { minorTickSettings: { stroke: args.value } });
+               }
+               else if (this._id == "featureMeasureStroke") {
+                   if (args.itemId != 0)
+                       $("#Bulletd").ejBulletGraph("option", "quantitativeScaleSettings", { featuredMeasureSettings: { stroke: args.value } });
+               }
+               else if (this._id == "comparativeSymbolStroke") {
+                   if (args.itemId != 0)
+                       $("#Bulletd").ejBulletGraph("option", "quantitativeScaleSettings", { comparativeMeasureSettings: { stroke: args.value } });
+               }
+               bulletValue2 = $("#Bulletm").data("ejBulletGraph")
+               if (this._id == "featureMeasureValue") {
+                   var dat = $("#Bulletm").data("ejBulletGraph");
+                   if (dat) {
+                       if (args.id == "featureMeasureValue")
+                           dat.setFeatureMeasureBarValue(0, args.value);
+                       else if (args.id == "comparativeMeasureValue")
+                           dat.setComparativeMeasureSymbol(0, args.value);
+                   }
+               }
+               else if (this._id == "comparativeMeasureValue") {
+                   var dat = $("#Bulletm").data("ejBulletGraph");
+                   if (dat) {
+                       if (args.id == "featureMeasureValue")
+                           dat.setFeatureMeasureBarValue(0, args.value);
+                       else if (args.id == "comparativeMeasureValue")
+                           dat.setComparativeMeasureSymbol(0, args.value);
+                   }
+               }
+               if (this._id == "range1Stroke") {
+                   if (args.itemId != 0)
+                       $("#Bulletm").ejBulletGraph("option", "qualitativeRanges", [{ rangeStroke: args.value }]);
+               }
+               else if (this._id == "range2Stroke") {
+                   if (args.itemId != 0)
+                       $("#Bulletm").ejBulletGraph("option", "qualitativeRanges", [{}, { rangeStroke: args.value }]);
+               }
+               else if (this._id == "range3Stroke") {
+                   if (args.itemId != 0)
+                       $("#Bulletm").ejBulletGraph("option", "qualitativeRanges", [{}, {}, { rangeStroke: args.value }]);
+               }
+               else if (this._id == "orientation") {
+                   if (args.itemId != 0) {
+                       var dat = $("#Bulletm").data("ejBulletGraph");
+                       if (dat) {
+                           $("#Bulletm").ejBulletGraph("option", "orientation", args.value);
+                           if (args.value == "vertical") {
+                               $("#Bulletm").ejBulletGraph("option", "height", 540);
+                               $("#Bulletm").ejBulletGraph("option", "width", 140);
+                               $("#Bulletm").ejBulletGraph("option", "quantitativeScale", { location: { x: 10, y: 10 } });
+                               $("#Bulletm").ejBulletGraph("option", "caption", { textAngle: 90, location: { x: -17, y: 2 }, subtitle: { textAngle: 90, location: { x: -20, y: 15 } } });
+                           }
+                           else {
+                               $("#Bulletm").ejBulletGraph("option", "height", 90);
+                               $("#Bulletm").ejBulletGraph("option", "width", 595);
+                               $("#Bulletm").ejBulletGraph("option", "quantitativeScale", { location: { x: 110, y: 10 } });
+                               $("#Bulletm").ejBulletGraph("option", "caption", { textAngle: 0, location: { x: 17, y: 30 }, subtitle: { textAngle: 0, location: { x: 10, y: 45 } } });
+                           }
+                       }
+                   }
+               }
+               else if (this._id == "flowDirection") {
+                   if (args.itemId != 0) {
+                       var dat = $("#Bulletm").data("ejBulletGraph");
+                       if (dat)
+                           $("#Bulletm").ejBulletGraph("option", "flowDirection", args.value);
+                   }
+               }
+               else if (this._id == "majorTickSettings") {
+                   if (args.itemId != 0)
+                       $("#Bulletm").ejBulletGraph("option", "quantitativeScaleSettings", { majorTickSettings: { stroke: args.value } });
+               }
+               else if (this._id == "minorTickStroke") {
+                   if (args.itemId != 0)
+                       $("#Bulletm").ejBulletGraph("option", "quantitativeScaleSettings", { minorTickSettings: { stroke: args.value } });
+               }
+               else if (this._id == "featureMeasureStroke") {
+                   if (args.itemId != 0)
+                       $("#Bulletm").ejBulletGraph("option", "quantitativeScaleSettings", { featuredMeasureSettings: { stroke: args.value } });
+               }
+               else if (this._id == "comparativeSymbolStroke") {
+                   if (args.itemId != 0)
+                       $("#Bulletm").ejBulletGraph("option", "quantitativeScaleSettings", { comparativeMeasureSettings: { stroke: args.value } });
+               }
+       }
+</script>
+       </table>
+      @(Html.EJ().BulletGraph("Bullets").QualitativeRangeSize(32).QuantitativeScaleLength(475).TooltipSettings(t=>t.Visible(true)).Orientation(Orientation.Horizontal).FlowDirection(Syncfusion.JavaScript.DataVisualization.FlowDirection.Forward)
+            .QuantitativeScaleSettings(qs =>
+            {
+                qs.Location(l => l.x(110).y(10))
+                    .Minimum(0)
+                    .Maximum(10)
+                    .Interval(1)
+                    .MinorTicksPerInterval(4)
+                    .MajorTickSettings(mat => mat.Size(15).Width(2))
+                     .MinorTickSettings(mit => mit.Size(7).Width(2))
+                    .LabelSettings(la => { la.Position(Syncfusion.JavaScript.DataVisualization.LabelPosition.Below).Offset(20); })
+                    .TickPosition(Syncfusion.JavaScript.DataVisualization.TickPosition.Far)
+                      .FeaturedMeasureSettings(fm => fm.Width(6))
+                    .ComparativeMeasureSettings(cm => cm.Width(5))
+                    .FeatureMeasure(fm => { fm.ComparativeMeasureValue(6.7).Value(8).Category("").Add(); });
+            })
+            .QualitativeRanges(qr =>
+            {
+                qr.RangeEnd(4.3).Add();
+                qr.RangeEnd(7.3).Add();
+                qr.RangeEnd(9.82).Add();
+            })
+                .CaptionSettings(cs => cs.TextAngle(0).Text("Sales Review").Location(ls => ls.x(17).y(20)).Font(f=>f.FontColor(System.Drawing.Color.Blue).FontFamily("Sagoe UI").FontStyle(Syncfusion.JavaScript.FontStyle.Normal.ToString()).FontSize("12px").FontWeight("Normal").Opacity(1))
+                .SubTitle(so => so.TextAngle(0).Text("$ in Thousands").Location(l => l.x(10).y(35)).Font(f=>f.FontColor(System.Drawing.Color.Blue).FontFamily("Segoe UI").FontStyle(Syncfusion.JavaScript.FontStyle.Italic.ToString()).FontSize("12px").FontWeight("Normal").Opacity(1)))))
+             @(Html.EJ().BulletGraph("Bullets").QualitativeRangeSize(32).QuantitativeScaleLength(475).TooltipSettings(t=>t.Visible(true)).Orientation(Orientation.Horizontal).FlowDirection(Syncfusion.JavaScript.DataVisualization.FlowDirection.Forward)
+            .QuantitativeScaleSettings(qs =>
+            {
+                qs.Location(l => l.x(110).y(10))
+                    .Minimum(0)
+                    .Maximum(10)
+                    .Interval(1)
+                    .MinorTicksPerInterval(4)
+                    .MajorTickSettings(mat => mat.Size(15).Width(2))
+                     .MinorTickSettings(mit => mit.Size(7).Width(2))
+                    .LabelSettings(la => { la.Position(Syncfusion.JavaScript.DataVisualization.LabelPosition.Below).Offset(20); })
+                    .TickPosition(Syncfusion.JavaScript.DataVisualization.TickPosition.Far)
+                      .FeaturedMeasureSettings(fm => fm.Width(6))
+                    .ComparativeMeasureSettings(cm => cm.Width(5))
+                    .FeatureMeasure(fm => { fm.ComparativeMeasureValue(6.7).Value(8).Category("").Add(); });
+            })
+            .QualitativeRanges(qr =>
+            {
+                qr.RangeEnd(4.3).Add();
+                qr.RangeEnd(7.3).Add();
+                qr.RangeEnd(9.82).Add();
+            })
+                .CaptionSettings(cs => cs.TextAngle(0).Text("Sales Review").Location(ls => ls.x(17).y(20)).Font(f=>f.FontColor(System.Drawing.Color.Blue).FontFamily("Sagoe UI").FontStyle(Syncfusion.JavaScript.FontStyle.Normal.ToString()).FontSize("12px").FontWeight("Normal").Opacity(1))
+                .SubTitle(so => so.TextAngle(0).Text("$ in Thousands").Location(l => l.x(10).y(35)).Font(f=>f.FontColor(System.Drawing.Color.Blue).FontFamily("Segoe UI").FontStyle(Syncfusion.JavaScript.FontStyle.Italic.ToString()).FontSize("12px").FontWeight("Normal").Opacity(1)))))
+            @(Html.EJ().BulletGraph("Bullet3").QualitativeRangeSize(32).QuantitativeScaleLength(475).TooltipSettings(t=>t.Visible(true)).Orientation(Orientation.Horizontal).FlowDirection(Syncfusion.JavaScript.DataVisualization.FlowDirection.Forward)
+            .QuantitativeScaleSettings(qs =>
+            {
+                qs.Location(l => l.x(110).y(10))
+                    .Minimum(0)
+                    .Maximum(10)
+                    .Interval(1)
+                    .MinorTicksPerInterval(4)
+                    .MajorTickSettings(mat => mat.Size(15).Width(2))
+                     .MinorTickSettings(mit => mit.Size(7).Width(2))
+                    .LabelSettings(la => { la.Position(Syncfusion.JavaScript.DataVisualization.LabelPosition.Below).Offset(20); })
+                    .TickPosition(Syncfusion.JavaScript.DataVisualization.TickPosition.Far)
+                      .FeaturedMeasureSettings(fm => fm.Width(6))
+                    .ComparativeMeasureSettings(cm => cm.Width(5))
+                    .FeatureMeasure(fm => { fm.ComparativeMeasureValue(6.7).Value(8).Category("").Add(); });
+            })
+            .QualitativeRanges(qr =>
+            {
+                qr.RangeEnd(4.3).Add();
+                qr.RangeEnd(7.3).Add();
+                qr.RangeEnd(9.82).Add();
+            })
+                .CaptionSettings(cs => cs.TextAngle(0).Text("Sales Review").Location(ls => ls.x(17).y(20)).Font(f=>f.FontColor(System.Drawing.Color.Blue).FontFamily("Sagoe UI").FontStyle(Syncfusion.JavaScript.FontStyle.Normal.ToString()).FontSize("12px").FontWeight("Normal").Opacity(1))
+                .SubTitle(so => so.TextAngle(0).Text("$ in Thousands").Location(l => l.x(10).y(35)).Font(f=>f.FontColor(System.Drawing.Color.Blue).FontFamily("Segoe UI").FontStyle(Syncfusion.JavaScript.FontStyle.Italic.ToString()).FontSize("12px").FontWeight("Normal").Opacity(1)))))
+           @(Html.EJ().BulletGraph("Bullet4").QualitativeRangeSize(32).QuantitativeScaleLength(475).TooltipSettings(t=>t.Visible(true)).Orientation(Orientation.Horizontal).FlowDirection(Syncfusion.JavaScript.DataVisualization.FlowDirection.Forward)
+            .QuantitativeScaleSettings(qs =>
+            {
+                qs.Location(l => l.x(110).y(10))
+                    .Minimum(0)
+                    .Maximum(10)
+                    .Interval(1)
+                    .MinorTicksPerInterval(4)
+                    .MajorTickSettings(mat => mat.Size(15).Width(2))
+                     .MinorTickSettings(mit => mit.Size(7).Width(2))
+                    .LabelSettings(la => { la.Position(Syncfusion.JavaScript.DataVisualization.LabelPosition.Below).Offset(20); })
+                    .TickPosition(Syncfusion.JavaScript.DataVisualization.TickPosition.Far)
+                      .FeaturedMeasureSettings(fm => fm.Width(6))
+                    .ComparativeMeasureSettings(cm => cm.Width(5))
+                    .FeatureMeasure(fm => { fm.ComparativeMeasureValue(6.7).Value(8).Category("").Add(); });
+            })
+            .QualitativeRanges(qr =>
+            {
+                qr.RangeEnd(4.3).Add();
+                qr.RangeEnd(7.3).Add();
+                qr.RangeEnd(9.82).Add();
+            })
+                .CaptionSettings(cs => cs.TextAngle(0).Text("Sales Review").Location(ls => ls.x(17).y(20)).Font(f=>f.FontColor(System.Drawing.Color.Blue).FontFamily("Sagoe UI").FontStyle(Syncfusion.JavaScript.FontStyle.Normal.ToString()).FontSize("12px").FontWeight("Normal").Opacity(1))
+                .SubTitle(so => so.TextAngle(0).Text("$ in Thousands").Location(l => l.x(10).y(35)).Font(f=>f.FontColor(System.Drawing.Color.Blue).FontFamily("Segoe UI").FontStyle(Syncfusion.JavaScript.FontStyle.Italic.ToString()).FontSize("12px").FontWeight("Normal").Opacity(1)))))
+                 @(Html.EJ().BulletGraph("Bullet5").QualitativeRangeSize(32).QuantitativeScaleLength(475).TooltipSettings(t=>t.Visible(true)).Orientation(Orientation.Horizontal).FlowDirection(Syncfusion.JavaScript.DataVisualization.FlowDirection.Forward)
+            .QuantitativeScaleSettings(qs =>
+            {
+                qs.Location(l => l.x(110).y(10))
+                    .Minimum(0)
+                    .Maximum(10)
+                    .Interval(1)
+                    .MinorTicksPerInterval(4)
+                    .MajorTickSettings(mat => mat.Size(15).Width(2))
+                     .MinorTickSettings(mit => mit.Size(7).Width(2))
+                    .LabelSettings(la => {la.Position(Syncfusion.JavaScript.DataVisualization.LabelPosition.Below).Offset(20); })
+                    .TickPosition(Syncfusion.JavaScript.DataVisualization.TickPosition.Far)
+                      .FeaturedMeasureSettings(fm => fm.Width(6))
+                    .ComparativeMeasureSettings(cm => cm.Width(5))
+                    .FeatureMeasure(fm => { fm.ComparativeMeasureValue(6.7).Value(8).Category("").Add(); });
+            })
+            .QualitativeRanges(qr =>
+            {
+                qr.RangeEnd(4.3).Add();
+                qr.RangeEnd(7.3).Add();
+                qr.RangeEnd(9.82).Add();
+            })
+                .CaptionSettings(cs => cs.TextAngle(0).Text("Sales Review").Location(ls => ls.x(17).y(20)).Font(f=>f.FontColor(System.Drawing.Color.Blue).FontFamily("Sagoe UI").FontStyle(Syncfusion.JavaScript.FontStyle.Normal.ToString()).FontSize("12px").FontWeight("Normal").Opacity(1))
+                .SubTitle(so => so.TextAngle(0).Text("$ in Thousands").Location(l => l.x(10).y(35)).Font(f=>f.FontColor(System.Drawing.Color.Blue).FontFamily("Segoe UI").FontStyle(Syncfusion.JavaScript.FontStyle.Italic.ToString()).FontSize("12px").FontWeight("Normal").Opacity(1)))))
+             @(Html.EJ().BulletGraph("Bulletd").QualitativeRangeSize(32).QuantitativeScaleLength(475).TooltipSettings(t=>t.Visible(true)).Orientation(Orientation.Horizontal).FlowDirection(Syncfusion.JavaScript.DataVisualization.FlowDirection.Forward)
+            .QuantitativeScaleSettings(qs =>
+            {
+                qs.Location(l => l.x(110).y(10))
+                    .Minimum(0)
+                    .Maximum(10)
+                    .Interval(1)
+                    .MinorTicksPerInterval(4)
+                    .MajorTickSettings(mat => mat.Size(15).Width(2))
+                    .MinorTickSettings(mit => mit.Size(7).Width(2))
+                    .LabelSettings(la => { la.Position(Syncfusion.JavaScript.DataVisualization.LabelPosition.Below).Offset(20); })
+                    .TickPosition(Syncfusion.JavaScript.DataVisualization.TickPosition.Far)
+                    .FeaturedMeasureSettings(fm => fm.Width(6))
+                    .ComparativeMeasureSettings(cm => cm.Width(5))
+                    .FeatureMeasure(fm => { fm.ComparativeMeasureValue(6.7).Value(8).Category("").Add(); });
+            })
+            .QualitativeRanges(qr =>
+            {
+                qr.RangeEnd(4.3).Add();
+                qr.RangeEnd(7.3).Add();
+                qr.RangeEnd(9.82).Add();
+            })
+                .CaptionSettings(cs => cs.TextAngle(0).Text("Sales Review").Location(ls => ls.x(17).y(20)).Font(f=>f.FontColor(System.Drawing.Color.Blue).FontFamily("Sagoe UI").FontStyle(Syncfusion.JavaScript.FontStyle.Normal.ToString()).FontSize("12px").FontWeight("Normal").Opacity(1))
+                .SubTitle(so => so.TextAngle(0).Text("$ in Thousands").Location(l => l.x(10).y(35)).Font(f=>f.FontColor(System.Drawing.Color.Blue).FontFamily("Segoe UI").FontStyle(Syncfusion.JavaScript.FontStyle.Italic.ToString()).FontSize("12px").FontWeight("Normal").Opacity(1))))) 
+           @(Html.EJ().BulletGraph("Bulletr")
+            .Height(540)
+            .EnableAnimation(true)
+            .QualitativeRangeSize(320)
+            .QuantitativeScaleLength(475)
+            .TooltipSettings(t=>t.Visible(true).Template("Tooltip"))
+            .Orientation(Orientation.Vertical)
+            .FlowDirection(FlowDirection.Backward)
+            .Fields(fie => { fie.Datasource(dt => { dt.URL("http://mvc.syncfusion.com/Services/Northwnd.svc/"); })
+                                                       .Query("ej.Query().from('Order_Details').take(10).where('UnitPrice', ej.FilterOperators.greaterThan, 18, false).where('UnitPrice', ej.FilterOperators.lessThanOrEqual, 40, false).where('Quantity', ej.FilterOperators.greaterThan, 5, false).where('Quantity',ej.FilterOperators.lessThanOrEqual,45,false)")
+                                                       .Category("ProductID").FeatureMeasure("UnitPrice").ComparativeMeasure("Quantity"); })
+            .QuantitativeScaleSettings(qs => { qs.Minimum(5).Maximum(45).Interval(10).MinorTicksPerInterval(4).TickPosition(TickPosition.Near).LabelSettings(lbl => lbl.Position(LabelPosition.Above)).Location(loc => loc.x(5).y(10)); })
+            .QualitativeRanges(qr =>
+                {
+                    qr.RangeEnd(25).Add();
+                    qr.RangeEnd(37).Add();
+                    qr.RangeEnd(45).Add();
+                })
+           .CaptionSettings(cap =>
+                    {
+                        cap.TextAngle(90)
+                            .SubTitle(st => { st.TextAngle(0).Text("Product (with Units's)").Font(fon => { fon.Opacity(1).FontWeight("regular").FontSize("12px").FontFamily("Segoe UI").FontStyle("Normal"); }).Location(loc => loc.x(170).y(5)); })
+                            .Text("Product (with ID's)")
+                            .Font(fon => { fon.Opacity(1).FontWeight("regular").FontSize("12px").FontFamily("Segoe UI").FontStyle("Normal"); })
+                           .Location(loc => loc.x(-35).y(60));
+                    }))
+</table>
+</div>

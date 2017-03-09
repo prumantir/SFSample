@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Time Picker";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Time Picker Features:</h2>
+<br/>
+<li> RTL</li>
+<li> Localization - en-US</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+<div class="frame">
+        <div class="control">
+           @Html.EJ().TimePicker("TimePick").Locale("en-US").EnableRTL(true)
+        </div>
+    </div>
+<style>
+        .frame .control {
+            width: 143px;
+            margin:0 auto;
+        }
+ </style>
+</div>

@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Slider";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Slider Features:</h2>
+<br/>
+<li> RangeSlider</li>
+<li> VerticalSlider</li>
+<li> RTL</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+<div><h3>Range Slider</h3>
+ <br />
+<div class="frame">
+    <div class="txt">Range</div>
+    @Html.EJ().Slider("rangeSlider").EnableRTL(true).SliderType(SlideType.Range).Values("30,60").Height("16px")
+    <br />
+    <br />
+    <div class="txt">Min-Range</div>
+    @Html.EJ().Slider("minSlider").EnableRTL(true).SliderType(SlideType.MinRange).Value("60").Height("16px")
+</div>
+</div>
+<div><h3>Vertical Slider</h3>
+ <div class="framevertical">
+        <div class="control">
+            @Html.EJ().Slider("vernormalSlider").EnableRTL(true).Orientation(Orientation.Vertical).SliderType(SlideType.Default).Value("30").Height("200").Width("12")
+            <span>Default</span>
+        </div>
+        <div class="control">
+            @Html.EJ().Slider("verminSlider").EnableRTL(true).Orientation(Orientation.Vertical).SliderType(SlideType.MinRange).Value("70").Height("200").Width("12")
+            <span>Min-Range</span>
+        </div>
+        <div class="control">
+            @Html.EJ().Slider("verrangeSlider").EnableRTL(true).Orientation(Orientation.Vertical).SliderType(SlideType.Range).Values("30, 70").Height("200").Width("12")
+            <span>Range</span>
+        </div>
+    </div>
+</div>
+<style type="text/css" class="cssStyles">
+     .frame {
+         width: 400px;
+     }
+     .txt {
+         font-size: 15px;
+         margin-bottom: 13px;
+     }
+.framevertical {
+    border-radius: 10px 10px 10px 10px;
+    height: 250px;
+    width: 255px;
+    padding: 40px;
+}
+.e-slider-wrap {
+    margin: 15px 35px;
+}
+.control {
+    float: left;
+}
+.control span {
+   color: #676767;
+   display: block;
+   font-size: 11px;
+   text-align: center;
+}
+</style>
+</div>

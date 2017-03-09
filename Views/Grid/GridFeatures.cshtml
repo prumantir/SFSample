@@ -1,0 +1,63 @@
+﻿@using SFSample.Grid
+@using SFSample
+@{
+    ViewBag.Title = "GridFeatures";
+}
+<h2>GridFeatures</h2>
+<li> Filtering</li>
+<li> Sorting</li>
+<li> Paging</li>
+<li> Selection - Single</li>
+<li> Column Resizing</li>
+<li> Frozen Rows and Columns</li>
+<li> RTL</li>
+<li> Summary</li>
+<li> Editing Type - Inline Editing</li>
+<li> Localization - English</li>
+<li> Theme - Flat-Saffron</li>
+<div id = "ControlRegion">
+@(Html.EJ().Grid<object>("FlatGrid")
+        .Datasource((IEnumerable<object>)ViewBag.datasource)
+        .AllowScrolling()
+         .AllowFiltering()
+                      .FilterSettings(filter => { filter.ShowFilterBarStatus().StatusBarWidth(500).FilterBarMode(FilterBarMode.Immediate); })   /*Filtering Enabled*/
+         .AllowSorting()    /*Sorting Enabled*/
+         .AllowPaging()    /*Paging Enabled*/
+              .SelectionType(SelectionType.Single)
+         .AllowResizing()
+         .ScrollSettings(scroll => { scroll.Height(330).Width(700).FrozenColumns(1).FrozenRows(1); })
+         .EnableRTL()   /*RTL Enabled*/
+            .ShowSummary()
+            .SummaryRow(row =>
+            {
+              row.Title("Sum").SummaryColumns(col => { col.SummaryType(SummaryType.Sum).Format("{0:C}").DisplayColumn("Freight").DataMember("Freight").Add(); }).Add();
+              row.Title("Average").SummaryColumns(col => { col.SummaryType(SummaryType.Average).Format("{0:C}").DisplayColumn("Freight").DataMember("Freight").Add(); }).Add();
+              row.Title("Smallest").SummaryColumns(col => { col.SummaryType(SummaryType.Minimum).Format("{0:C}").DisplayColumn("Freight").DataMember("Freight").Add(); }).Add();
+              row.Title("Largest").SummaryColumns(col => { col.SummaryType(SummaryType.Maximum).Format("{0:C}").DisplayColumn("Freight").DataMember("Freight").Add(); }).Add();
+            })   
+              .EditSettings(edit=>{edit.AllowAdding().AllowDeleting().AllowEditing(); })
+              .ToolbarSettings(toolbar =>
+                {
+                 toolbar.ShowToolbar().ToolbarItems(items =>
+                 {
+                  items.AddTool(ToolBarItems.Add);
+                  items.AddTool(ToolBarItems.Edit);
+                  items.AddTool(ToolBarItems.Delete);
+                  items.AddTool(ToolBarItems.Update);
+                  items.AddTool(ToolBarItems.Cancel);
+                });
+              })
+        .Columns(col =>
+        {
+            col.Field("OrderID").HeaderText("Order ID").IsPrimaryKey(true).TextAlign(TextAlign.Right).Width(75).Add();
+            col.Field("CustomerID").HeaderText("Customer ID").Width(80).Add();
+            col.Field("EmployeeID").HeaderText("Employee ID").TextAlign(TextAlign.Right).Width(75).Add();
+            col.Field("Freight").HeaderText("Freight").TextAlign(TextAlign.Right).Width(75).Format("{0:C}").Add();
+            col.Field("OrderDate").HeaderText("Order Date").TextAlign(TextAlign.Right).Width(80).Format("{0:MM/dd/yyyy}").Add();
+            col.Field("ShipCity").HeaderText("Ship City").Width(110).Add();
+            col.Field("ShipName").HeaderText("Ship Name").Width(170).Add();
+            col.Field("OrderDate").HeaderText("Order Date").TextAlign(TextAlign.Right).Width(100).Format("{0:MM/dd/yyyy}").EditType(EditingType.Datepicker).ValidationRules(v => v.AddRule("date", true)).Add();
+            col.Field("ShipPostalCode").HeaderText("Postal Code").TextAlign(TextAlign.Right).Width(140).Add();
+            col.Field("Verified").HeaderText("Verified").EditType(EditingType.Boolean).Width(100).Add();
+        }))
+</div>

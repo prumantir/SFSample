@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Diagram";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Diagram Features:</h2>
+<br/>
+<li> Diagram Samples - Default Functionalities</li>
+<li> Gridlines and Snapping</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+          <div>
+          @Html.EJ().Diagram("Diagram1", ViewData["diagramModel"] as Syncfusion.JavaScript.DataVisualization.Models.DiagramProperties)
+          </div>  
+</div>

@@ -1,0 +1,36 @@
+﻿@using SFSample
+@{
+    ViewBag.Title = "Rotator";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Rotator Features:</h2>
+<br/>
+<li> Rotator samples - Default Functionalities</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+      <div class="frame">
+        @{Html.EJ().Rotator("content").Items(itemElement =>
+                       {
+                           itemElement.Add().ContentTemplate(@<div>
+                                <img class="image" src="@Url.Content("~/Content/Images/Rotator/nature.jpg")" /></div>);
+                           itemElement.Add().ContentTemplate(@<div>
+                                <img class="image" src="@Url.Content("~/Content/Images/Rotator/bird.jpg" )"/></div>);
+                           itemElement.Add().ContentTemplate(@<div>
+                                <img class="image" src="@Url.Content("~/Content/Images/Rotator/sculpture.jpg")" /></div>);
+                           itemElement.Add().ContentTemplate(@<div>
+                                <img class="image" src="@Url.Content("~/Content/Images/Rotator/seaview.jpg")" /></div>);
+                           itemElement.Add().ContentTemplate(@<div>
+                                <img class="image" src="@Url.Content("~/Content/Images/Rotator/snowfall.jpg")" /></div>);
+                       }).SlideWidth("600px").SlideHeight("350px").ShowPlayButton(true).Render();}
+      </div>
+      <style type="text/css" class="cssStyles">
+        .frame {
+            width: 600px;
+         }
+        #sliderContent > li .image {
+            width: 600px;
+            height: 350px;
+        }
+      </style>
+</div>

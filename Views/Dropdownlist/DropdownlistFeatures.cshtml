@@ -1,0 +1,77 @@
+﻿@using SFSample
+@{
+    ViewBag.Title = "Dropdownlist";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Dropdownlist Features:</h2>
+<br/>
+<li> Checkbox</li>
+<li> Cascading</li>
+<li> RTL</li>
+<li> Theme - Flat-Saffron</li>
+<br/>
+<div id = "ControlRegion">
+<div class="frame1">
+        <div class="control">
+            <div class="ctrllabel">
+                Select a car</div>
+         @Html.EJ().DropDownList("selectCar").TargetID("carsList").ShowCheckbox().EnableRTL(true).Width("150px")           
+ <div id="carsList">
+                <ul>
+                    //Grouping1###
+                    <li>Audi A4</li>
+                    <li>Audi A5</li>
+                    <li>Audi A6</li>
+                    <li>Audi A7</li>
+                    //Grouping2###
+                    <li>Honda H1</li>
+                    <li>Honda H2</li>
+                    <li>Honda H3</li>
+                    <li>Honda H4</li>
+                </ul>
+            </div>
+        </div>
+ </div>
+<br/><br/>
+    <div class="frame">
+        <h3 style="margin-left:20px;">Cascading sample:</h3>
+        <br />
+        <div class="control" style="float: left;">
+            <span class="txt">Select Group</span>
+            @Html.EJ().DropDownList("groupsList").Datasource((IEnumerable<groups>)ViewBag.datasource).DropDownListFields(f => f.Value("parentId").Text("text")).CascadeTo("countryList").EnableRTL(true)
+        </div>
+        <div class="control" style="float: left;">
+            <span class="txt">Select Country</span>
+            @Html.EJ().DropDownList("countryList").Datasource((IEnumerable<Countries>)ViewBag.datasource1).Enabled(false).EnableRTL(true)
+        </div>
+    </div>
+<style type="text/css" class="cssStyles">
+        .control
+        {
+            margin-left: 30px;
+        }
+        .ctrllabel
+        {
+            padding-top: 15px;
+        }
+        .control
+        {
+            margin-left: 20px;
+        }
+        .frame
+        {
+            height: 150px;
+            width: 400px;
+        }
+         .frame1
+        {
+            height: 55px;
+            width: 400px;
+        }
+        .txt
+        {
+            display: block;
+            margin-bottom: 12px;
+        }
+</style>
+</div>
